@@ -27,8 +27,8 @@ var readyWrap = function () {
         var base = 20;  // base size for all inputs
         var chars = target.value.length;
         var size = target.size;
-        if (chars > size) {  // if the input needs to expand
-            return target.size = target.value.length;  // expand it
+        if (chars > size) {  // if the input needs to expand (-5 char offset for UI)
+            return target.size = target.value.length;  // expand it (-5 char offset for UI)
         } else if (chars < size && chars > base) {  // if the input contains less than its width and still has more than 15 characters
             return target.size = target.value.length;  // shrink it
         } else {  // otherwise
