@@ -87,9 +87,6 @@ var readyWrap = function () {
             AJAX.open('POST', 'https://mandrillapp.com/api/1.0/messages/send.json', true);
             AJAX.send(JSON.stringify(email));
         }
-
-
-
     }
 
 
@@ -115,7 +112,6 @@ var readyWrap = function () {
             speed: 500
         });
     }
-
 
 };
 
