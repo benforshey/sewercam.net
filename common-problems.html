@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SewerCam</title>
+    <script>
+        /*!
+         loadCSS: load a CSS file asynchronously.
+         [c]2015 @scottjehl, Filament Group, Inc.
+         Licensed MIT
+         */
+        (function(w){
+            "use strict";
+            /* exported loadCSS */
+            w.loadCSS = function( href, before, media ){
+                // Arguments explained:
+                // `href` [REQUIRED] is the URL for your CSS file.
+                // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+                // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+                // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+                var doc = w.document;
+                var ss = doc.createElement( "link" );
+                var ref;
+                if( before ){
+                    ref = before;
+                }
+                else {
+                    var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+                    ref = refs[ refs.length - 1];
+                }
+
+                var sheets = doc.styleSheets;
+                ss.rel = "stylesheet";
+                ss.href = href;
+                // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+                ss.media = "only x";
+
+                // Inject link
+                // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+                // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+                ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+                // A method (exposed on return object for external use) that mimics onload by polling until document.styleSheets until it includes the new sheet.
+                var onloadcssdefined = function( cb ){
+                    var resolvedHref = ss.href;
+                    var i = sheets.length;
+                    while( i-- ){
+                        if( sheets[ i ].href === resolvedHref ){
+                            return cb();
+                        }
+                    }
+                    setTimeout(function() {
+                        onloadcssdefined( cb );
+                    });
+                };
+
+                // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+                ss.onloadcssdefined = onloadcssdefined;
+                onloadcssdefined(function() {
+                    ss.media = media || "all";
+                });
+                return ss;
+            };
+        }(this));
+        loadCSS('styles/styles.css');
+    </script>
+    <script>
+        /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+        function loadJS( src, cb ){
+            "use strict";
+            var ref = window.document.getElementsByTagName( "script" )[ 0 ];
+            var script = window.document.createElement( "script" );
+            script.src = src;
+            script.async = true;
+            ref.parentNode.insertBefore( script, ref );
+            if (cb && typeof(cb) === "function") {
+                script.onload = cb;
+            }
+            return script;
+        }
+        loadJS('scripts/main.js');
+    </script>
+</head>
+<body>
+<header role="banner">
+    <nav class="siteNav" role="navigation">
+        <h1 class="nav_logoText">SewerCam</h1>
+        <img class="nav_logoImage" src="images/logo.png" alt="SewerCam logo of sewer camera">
+        <ul>
+            <li><a href="index.html">SewerCam</a></li>
+            <li><a href="your-inspection.html">Your Inspection</a></li>
+            <li><a href="common-problems.html">Common Problems</a></li>
+            <li><a href="pipe-library.html">Pipe Library</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="siteContent" role="main">
+    <h2 id="top">Common Problems</h2>
+    <nav>
+        <ul>
+            <li><a data-scroll href="#buildup">Buildup</a></li>
+            <li><a data-scroll href="#corrosion">Corrosion</a></li>
+            <li><a data-scroll href="#erosion">Erosion</a></li>
+            <li><a data-scroll href="#foreign-object">Foreign Object</a></li>
+            <li><a data-scroll href="#fracture">Fracture</a></li>
+            <li><a data-scroll href="#low-area">Low Area</a></li>
+            <li><a data-scroll href="#offset">Offset</a></li>
+            <li><a data-scroll href="#root-intrusion">Root Intrusion</a></li>
+        </ul>
+    </nav>
+    <p>Although most of our sewer scopes reveal a healthy side sewer, the problems that we do find can be categorized into a handful of terms. We&rsquo;re committed to providing you with unbiased and accurate reports. Since we&rsquo;re not plumbers or contractors (we only perform sewer scopes with our state-of-the art inspection camera), we don&rsquo;t have any reason to exaggerate the condition of an abnormality.</p>
+    <p>Please feel free to use these definitions for your reference, but know that the information presented on this page is subject to SewerCam&rsquo;s <a href="no-warranty.txt">No Warranty Clause</a>.</p>
+    <dl>
+        <dt id="break">Break</dt>
+        <dd>A break is any breach in the pipe&rsquo;s wall. If the break is on the bottom of the pipe and completely breaches is pipe&rsquo;s wall, the break will allow sewage to enter the ground, compromising the function of the side sewer. The SewerCam technician performing the sewer scope may find that the break does not effect the overall function of the pipe (like when the inspection camera captures a small break in the top of the pipe), but breaks are usually a must-fix abnormality.<br><a data-scroll href="#top">Return to Top</a></dd>
+        <dt id="buildup">Buildup</dt>
+        <dd>A buildup is any significant material that has remained on the pipe&rsquo;s wall. The sewer scope could reveal debris (soil and aggregate) or solidified cooking oils. Depending on the severity of the buildup, the SewerCam technician may recommend cleaning the side sewer&mdash;a common maintenance action for side sewer lines.<br><a data-scroll href="#top">Return to Top</a></dd>
+        <dt id="corrosion">Corrosion</dt>
+        <dd>Corrosion is the gradual destruction of the pipe&rsquo;s interior surface. Rusting is a common form of corrosion. Cast iron pipe commonly corrodes at a very slow rate. The inspection camera may find areas of heavy corrosion that either restrict the interior diameter of the pipe or compromise the integrity of the pipe&rsquo; wall. The severity of corrosion, not the presence of corrosion, is the determining factor in the health of your side sewer.<br><a data-scroll href="#top">Return to Top</a></dd>
+        <dt id="erosion">Erosion</dt>
+        <dd>Erosion is the natural removal of aggregate and cement from the interior of a concrete pipe. Erosion is a slow process that tends to accelerate towards the end of a pipe&rsquo;s life. As the surface of a concrete pipe become more eroded, the force of the water tends to wash away more cement, loosening the aggregate and washing it down the side sewer. The SewerCam sewer scope may reveal erosion, but not all erosion requires repair.<br><a data-scroll href="#top">Return to Top</a></dd>
+        <dt id="foreign-object">Foreign Object</dt>
+        <dd>A foreign object is any remaining object not native to the side sewer. A foreign object could be something as harmless as a child&rsquo;s small toy car that will soon wash down the line, or it might be something as severe as a piece of rebar driven through the center of the pipe. Your SewerCam sewer scope technician will accurately determine the impact that the foreign object has on the side sewer&rsquo;s function.<br><a data-scroll href="#top">Return to Top</a></dd>
+        <dt id="fracture">Fracture</dt>
+        <dd>A fracture is the cracking of the pipes wall. Fracturing is most commonly seen in vitrified clay pipe. The presence of fracturing does not require the replacement of the pipe&mdash;only fractures that impair the function of the side sewer (or fractures that could be classified as a break in the pipe&rsquo;s wall) may require repair. Your SewerCam sewer scope technician can determine the fracturing&rsquo;s effect on the side sewer&rsquo;s function.<br><a data-scroll href="#top">Return to Top</a></dd>
+        <dt id="low-area">Low Area</dt>
+        <dd>When our inspection camera finds a length of pipe that never completely drains, we <br><a data-scroll href="#top">Return to Top</a></dd>
+        <dt id="offset">Offset</dt>
+        <dd></dd>
+        <dt id="root-intrusion">Root Intrusion</dt>
+        <dd><br><a data-scroll href="#top">Return to Top</a></dd>
+    </dl>
+
+</main>
+<footer>
+
+</footer>
+<script src="scripts/smooth-scroll.js"></script>
+
+</body>
+
+</html>

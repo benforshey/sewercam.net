@@ -6,107 +6,115 @@ function ready(fn) {
     } else {
         document.attachEvent('onreadystatechange', function() {
             if (document.readyState != 'loading')
-                fn();
+            fn();
         });
     }
 }
 
-var readyWrap = function() {
-    // requestAnimationFrame shim from http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
-    window.requestAnimFrame = (function(){
-        return  window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            function( callback ){
-                window.setTimeout(callback, 1000 / 60);
-            };
-    })();
-    (function initMap() {
-        var center = new google.maps.LatLng(47.379999, -122.252049);
-        var federalWay = new google.maps.LatLng(47.322302, -122.315142);
-        var auburn = new google.maps.LatLng(47.307731, -122.230300);
-        var kent = new google.maps.LatLng(47.381680, -122.235277);
-        var desMoines = new google.maps.LatLng(47.402149, -122.321329);
-        var seaTac = new google.maps.LatLng(47.443651, -122.296536);
-        var burien = new google.maps.LatLng(47.471032, -122.345776);
-        var mapOptions = {
-            zoom: 11,
-            center: center
-        };
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var marker1 = new google.maps.Marker({
-            position: federalWay,
-            map: map,
-            title: "Federal Way"
-        });
-        var marker2 = new google.maps.Marker({
-            position: auburn,
-            map: map,
-            title: 'Auburn'
-        });
-        var marker3 = new google.maps.Marker({
-            position: kent,
-            map: map,
-            title: 'Kent'
-        });
-        var marker4 = new google.maps.Marker({
-            position: desMoines,
-            map: map,
-            title: 'Des Moines'
-        });
-        var marker5 = new google.maps.Marker({
-            position: seaTac,
-            map: map,
-            title: 'SeaTac'
-        });
-        var marker6 = new google.maps.Marker({
-            position: burien,
-            map: map,
-            title: 'Burien'
-        });
-    })();
-    // modified from http://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation#answer-26808520
-    function scrollToY(scrollTargetY, speed) {  // scrollTargetY: the target scrollY property of the window; speed: time in pixels per second
+var readyWrap = function () {
+    var address = document.getElementsByClassName('inspection_address');
+    var contactInfo = document.getElementsByClassName('inspection_contactInfo');
+    var customerName = document.getElementsByClassName('inspection_customerName');
+    var feedbackContainer = document.getElementsByClassName('form_feedback');
+    var inputs = document.getElementsByTagName('input');
+    var inspectionForm = document.getElementsByClassName('inspection_form');
+    var security = document.getElementsByClassName('form_security');
+    var time = document.getElementsByClassName('inspection_time');
 
-        var scrollY = window.scrollY,
-            currentTime = 0;
 
-        if (!scrollTargetY) {
-            scrollTargetY = 0;  // scrollY of target
-        }
-        if (!speed) {
-            speed = 2000;  // pixels per second
+
+    function inputWidthController (target) {
+        var base = 20;  // base size for all inputs
+        var chars = target.value.length;
+        var size = target.size;
+        if (chars - 5 > size) {  // if the input needs to expand (-5 char offset for UI)
+            return target.size = target.value.length - 5;  // expand it (-5 char offset for UI)
+        } else if (chars < size && chars > base) {  // if the input contains less than its width and still has more than 15 characters
+            return target.size = target.value.length;  // shrink it
+        } else {  // otherwise
+            return target.size = base;  // set to the base width
         }
 
-        function easingEquation(pos) { // easeInOutQuint easing equation from https://github.com/danro/easing-js/blob/master/easing.js
-            if ((pos /= 0.5) < 1) {
-                return 0.5 * Math.pow(pos, 5);
-            }
-            return 0.5 * (Math.pow((pos - 2), 5) + 2);
-        }
-
-        (function tick() {  // the animation loop engine; self invoking
-            currentTime += 1 / 60;
-            var time = Math.max(0.1, Math.min(Math.abs(scrollY - scrollTargetY) / speed, 0.8)),  // min time 0.1, max time 0.8 seconds
-                p = currentTime / time,
-                t = easingEquation(p);
-            if (p < 1) {
-                window.requestAnimFrame(tick);
-                window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
-            } else {
-                window.scrollTo(0, scrollTargetY);
-            }
-        })();
     }
-    var smoothScroll = document.querySelector('.smoothScroll');
-    smoothScroll.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (e.target && e.target.nodeName === 'A') {
-            var id = e.target.hash.replace('#', '');
-            var yVal = document.getElementById(id).getBoundingClientRect().top;
-            scrollToY(yVal, 2500);
+
+    function sendReport () {
+        var AJAX = new XMLHttpRequest();
+        var feedback = document.createElement('p');
+        var message = {
+            address: address[0].value,
+            contactInfo: contactInfo[0].value,
+            customerName: customerName[0].value,
+            time: time[0].value
+        };
+        var email = {
+            'key': 'a3fQuy-kRF_7jvlhm-wkUA',
+            'message': {
+                'from_email': 'no-reply@hydro-physics.co',
+                'from_name': message.customerName,
+                'subject': 'From SewerCam: ' + message.customerName,
+                'html': '<p>Site: ' + message.address + '</p><p>Time: ' + message.time + '</p><p>Customer Name: ' + message.customerName + '</p><p>Customer Contact Info: ' + message.contactInfo + '</p>',
+                'to': [
+                    {
+                        'email': 'hello@benforshey.com',  // todo: change back to 'clayton@hydro-physics.co'
+                        'name': 'Clayton Ashley',
+                        'type': 'to'
+                    }]
+            }
+        };
+
+        if (security[0].value) {  // if the security input has a value, it's been filled
+            feedback.className = "feedback_error";
+            feedback.innerHTML = "Sorry for the inconvenience, but you somehow triggered our anti-spam protection. Please use the contact information at the <a href='#footer'>bottom of the page</a> to reach us.";
+            feedbackContainer[0].appendChild(feedback);
+        } else {
+            AJAX.addEventListener('load', function (e) {
+
+                if (e.target.status === 200) {  // if the message was sent
+                    feedback.className = "feedback_success";
+                    feedback.innerHTML = "Your message was sent!";
+                    feedbackContainer[0].appendChild(feedback);
+
+                    for (var i = 0; i < inputs.length; i ++) {  // empty the form on success
+                        inputs[i].value = '';
+                    }
+                } else {  // something nonspecific has gone wrong
+                    feedback.className = "feedback_warning";
+                    feedback.innerHTML = "Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the <a href='#footer'>bottom of the page</a> to reach us."
+                    feedbackContainer[0].appendChild(feedback);
+                }
+            });
+
+            AJAX.open('POST', 'https://mandrillapp.com/api/1.0/messages/send.json', true);
+            AJAX.send(JSON.stringify(email));
         }
-    });
+
+
+
+    }
+
+
+    /* event listeners & function calls */
+
+    if (inputs.length) {
+
+        for (var i = 0; i < inputs.length; i ++) {
+            inputs[i].addEventListener('input', function(e) {
+                inputWidthController(e.target);
+            });
+        }
+
+        inspectionForm[0].addEventListener('submit', function (e) {
+            e.preventDefault();
+            sendReport();
+        });
+    }
+
+    if (typeof smoothScroll !== 'undefined') {  // check if smoothScroll script is present
+        smoothScroll.init({  // init smooth scroll
+            easing: 'easeInOutQuad',
+            speed: 500
+        });
+    }
 
 
 };
