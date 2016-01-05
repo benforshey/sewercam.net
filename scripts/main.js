@@ -24,7 +24,7 @@ var readyWrap = function () {
 
 
     function inputWidthController (target) {
-        var base = 20;  // base size for all inputs
+        var base = 25;  // base size for all inputs
         var chars = target.value.length;
         var size = target.size;
         if (chars > size) {  // if the input needs to expand (-5 char offset for UI)
