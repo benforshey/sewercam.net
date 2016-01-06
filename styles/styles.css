@@ -576,6 +576,17 @@ h3 {
     width: 12em;
 }
 
+.nav_site {
+    padding: .5em;
+}
+
+.nav__inline {
+    display: inline;
+}
+
+.site_link__active {
+    border-bottom: 2px solid #3FCC52;
+}
 
 /*--------------------------------------------------
 ----------------------------------------------------
@@ -585,33 +596,38 @@ h3 {
 
 .siteContent {
     margin: 3em auto;
+}
+
+.siteContent__singleColumn {
     max-width: 35em;
 }
 
 .cta_container {
     background: url(../images/low-poly.png) no-repeat center;
-    height: 15em;
+    height: 20em;
+    max-width: 53.333333333em;
     position: relative;
 }
 
 .cta_tagline {
     position: absolute;
     text-align: center;
-    top: .25em;
+    top: 1em;
     width: 100%;
 }
 
 .cta_serviceLead {
+    font-weight: 700;
     position: absolute;
     text-align: center;
-    top: 5em;
+    top: 9em;
     width: 100%;
 }
 
 .cta_action {
     position: absolute;
     text-align: center;
-    top: 9em;
+    top: 15em;
     width: 100%;
 }
 
@@ -657,6 +673,13 @@ dt {
 6) Utility & Interaction
 ----------------------------------------------------
 ---------------------------------------------------*/
+a {
+    background: rgba(226, 213, 40, .8);
+    color: inherit;
+    padding: 0 .125em;
+    text-decoration: none;
+}
+
 .button {
 
 }
@@ -666,7 +689,7 @@ dt {
 }
 
 .form_security {
-    /*display: none;*/
+    display: none;
 }
 
 .feedback_success {
@@ -688,3 +711,21 @@ dt {
 ---------------------------------------------------*/
 /* The absence of support for media queries is in fact the ﬁrst media query. -Bryan Rieger */
 /* Mobile styles are the default, then add media queries below. */
+
+@media screen and (min-width: 35em) {
+    .cta_tagline {
+        font-size: 2.5em;
+    }
+
+    .cta_serviceLead {
+        top: 10em;
+        width: 100%;
+    }
+
+    .cta_action {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+
+}

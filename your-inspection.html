@@ -87,14 +87,14 @@
         <h1 class="nav_logoText">SewerCam</h1>
         <img class="nav_logoImage" src="images/logo.png" alt="SewerCam logo of sewer camera">
         <ul>
-            <li><a href="index.html">SewerCam</a></li>
-            <li><a href="your-inspection.html">Your Inspection</a></li>
-            <li><a href="common-problems.html">Common Problems</a></li>
-            <li><a href="pipe-library.html">Pipe Library</a></li>
+            <li class="nav_site nav__inline"><a class="site_link" href="index.html">SewerCam</a></li>
+            <li class="nav_site nav__inline"><a class="site_link site_link__active" href="your-inspection.html">Your Inspection</a></li>
+            <li class="nav_site nav__inline"><a class="site_link" href="common-problems.html">Common Problems</a></li>
+            <li class="nav_site nav__inline"><a class="site_link" href="pipe-library.html">Pipe Library</a></li>
         </ul>
     </nav>
 </header>
-<main class="siteContent" role="main">
+<main class="siteContent siteContent__singleColumn" role="main">
     <section class="scheduleYourInspection">
         <h2>Schedule Your Inspection</h2>
         <form class="inspection_form">
@@ -118,7 +118,7 @@
     </section>
     <section class="pricingTable">
         <h2>Sewer Scope Pricing</h2>
-        <table>
+        <table id="pricing">
             <thead>
             <tr>
                 <th>Service</th>
@@ -156,6 +156,7 @@
             </tr>
             </tbody>
         </table>
+        <p>A &dollar;35 access fee will be applied if no accessible cleanout can be found and the SewerCam sewer scope technician must access the side-sewer through a pulled toilet or roof vent. Visit our Pipe Library for help <a href="pipe-library.html#cleanout">locating your cleanout</a>.</p>
     </section>
 
 

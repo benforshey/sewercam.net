@@ -11,7 +11,7 @@ function ready(fn) {
     }
 }
 
-var readyWrap = function () {
+var readyWrap = function() {
     var address = document.getElementsByClassName('inspection_address');
     var contactInfo = document.getElementsByClassName('inspection_contactInfo');
     var customerName = document.getElementsByClassName('inspection_customerName');
@@ -19,11 +19,12 @@ var readyWrap = function () {
     var inputs = document.getElementsByTagName('input');
     var inspectionForm = document.getElementsByClassName('inspection_form');
     var security = document.getElementsByClassName('form_security');
+    var siteLinks = document.getElementsByClassName('site_link');
     var time = document.getElementsByClassName('inspection_time');
 
 
 
-    function inputWidthController (target) {
+    function inputWidthController(target) {
         var base = 25;  // base size for all inputs
         var chars = target.value.length;
         var size = target.size;
@@ -37,7 +38,7 @@ var readyWrap = function () {
 
     }
 
-    function sendReport () {
+    function sendReport() {
         var AJAX = new XMLHttpRequest();
         var feedback = document.createElement('p');
         var message = {
@@ -55,7 +56,7 @@ var readyWrap = function () {
                 'html': '<p>Site: ' + message.address + '</p><p>Time: ' + message.time + '</p><p>Customer Name: ' + message.customerName + '</p><p>Customer Contact Info: ' + message.contactInfo + '</p>',
                 'to': [
                     {
-                        'email': 'hello@benforshey.com',  // todo: change back to 'clayton@hydro-physics.co'
+                        'email': 'clayton@hydro-physics.co',
                         'name': 'Clayton Ashley',
                         'type': 'to'
                     }]
@@ -88,7 +89,6 @@ var readyWrap = function () {
             AJAX.send(JSON.stringify(email));
         }
     }
-
 
     /* event listeners & function calls */
 
