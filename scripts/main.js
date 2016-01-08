@@ -18,8 +18,8 @@ var readyWrap = function() {
     var feedbackContainer = document.getElementsByClassName('form_feedback');
     var inputs = document.getElementsByTagName('input');
     var inspectionForm = document.getElementsByClassName('inspection_form');
+    var logoNav = document.getElementsByClassName('logoNav');
     var security = document.getElementsByClassName('form_security');
-    var siteLinks = document.getElementsByClassName('site_link');
     var time = document.getElementsByClassName('inspection_time');
 
 
@@ -91,6 +91,13 @@ var readyWrap = function() {
     }
 
     /* event listeners & function calls */
+
+    if (logoNav.length) {
+        logoNav[0].addEventListener('click', function (e) {
+            window.location.href = 'index.html';
+        });
+    }
+
 
     if (inputs.length) {
 

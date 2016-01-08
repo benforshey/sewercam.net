@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SewerCam</title>
+    <title>Sewercam</title>
     <script>
         /*!
          loadCSS: load a CSS file asynchronously.
@@ -84,22 +84,30 @@
 <body>
 <header role="banner">
     <nav class="siteNav" role="navigation">
-        <h1 class="nav_logoText">SewerCam</h1>
-        <img class="nav_logoImage" src="images/logo.png" alt="SewerCam logo of sewer camera">
-        <ul>
-            <li class="nav_site nav__inline"><a class="site_link" href="index.html">SewerCam</a></li>
-            <li class="nav_site nav__inline"><a class="site_link site_link__active" href="your-inspection.html">Your Inspection</a></li>
-            <li class="nav_site nav__inline"><a class="site_link" href="common-problems.html">Common Problems</a></li>
-            <li class="nav_site nav__inline"><a class="site_link" href="pipe-library.html">Pipe Library</a></li>
+        <div class="logoNav">
+            <h1 class="nav_logoText">Sewercam</h1>
+            <img class="nav_logoImage" src="images/logo.png" alt="Sewercam logo of sewer camera">
+        </div>
+        <ul class="siteNav_ul">
+            <li class="nav_site"><a class="site_link site_link__active" href="your-sewer-scope.html">Your Sewer Scope</a></li>
+            <li class="nav_site"><a class="site_link" href="common-problems.html">Common Problems</a></li>
+            <li class="nav_site"><a class="site_link" href="pipe-library.html">Pipe Library</a></li>
         </ul>
     </nav>
 </header>
 <main class="siteContent siteContent__singleColumn" role="main">
+    <section class="serviceArea">
+        <h2>Sewercam Service Area</h2>
+        <figure class="serviceArea_map">
+            <figcaption>Primary Service Area</figcaption>
+            <img src="images/service-area-map.jpg" alt="map of area from SR18 to SR518">
+        </figure>
+    </section>
     <section class="scheduleYourInspection">
-        <h2>Schedule Your Inspection</h2>
+        <h2>Schedule Your Sewer Scope</h2>
         <form class="inspection_form">
             <p>Hello!</p>
-            <p>I&rsquo;d like to schedule a sewer scope at <input class="input__inline inspection_address" type="text" title="the inspection address" placeholder="the inspection address" size="25" required> for <input class="input__inline inspection_time" type="text" title="my preferred date & time" placeholder="my preferred date & time" size="25" required>.</p>
+            <p>I&rsquo;d like to schedule a sewer scope at <input class="input__inline inspection_address" type="text" title="the site&rsquo;s address" placeholder="the site&rsquo;s address" size="25" required> for <input class="input__inline inspection_time" type="text" title="my preferred date & time" placeholder="my preferred date & time" size="25" required>.</p>
             <p> Please confirm my inspection date and time by contacting me at <input type="text" title="my contact info" class="input__inline inspection_contactInfo" placeholder="my contact info" size="25" required>.</p>
             <p>Regards,</p>
             <p><input type="text" title="my name" class="input__inline inspection_customerName" placeholder="my name" size="25" required></p>
@@ -108,54 +116,43 @@
             <div class="form_feedback"></div>
         </form>
     </section>
-    <section class="serviceArea">
-        <h2>SewerCam Service Area</h2>
-        <figure class="serviceArea_map">
-            <figcaption>Primary Service Area</figcaption>
-            <img src="images/service-area-map.jpg" alt="map of area from SR18 to SR518">
-        </figure>
-    </section>
     <section class="pricingTable">
         <h2>Sewer Scope Pricing</h2>
-        <table id="pricing">
-            <thead>
+        <table class="pricingTable_table" id="pricing">
             <tr>
                 <th>Service</th>
-                <th>Camera Inspection</th>
+                <th>Scope</th>
                 <th>Report</th>
-                <th>Digital Video</th>
+                <th>Video</th>
                 <th>Locates</th>
                 <th>Price</th>
             </tr>
-            </thead>
-            <tbody>
             <tr>
-                <td>Sewer Scope</td>
-                <td>&check;</td>
-                <td>&check;</td>
-                <td>&check;</td>
-                <td>&check;</td>
-                <td>&dollar;215</td>
+                <td data-th="Service">Full Sewer Scope</td>
+                <td data-th="Scope">&check;</td>
+                <td data-th="Report">&check;</td>
+                <td data-th="Video">&check;</td>
+                <td data-th="Locates">&check;</td>
+                <td data-th="Price">&dollar;215</td>
             </tr>
             <tr>
-                <td>Re-Scope</td>
-                <td>&check;</td>
-                <td>&check;</td>
-                <td>&check;</td>
-                <td>&check;</td>
-                <td>&dollar;150</td>
+                <td data-th="Service">Re-Scope</td>
+                <td data-th="Scope">&check;</td>
+                <td data-th="Report">&check;</td>
+                <td data-th="Video">&check;</td>
+                <td data-th="Locates">&check;</td>
+                <td data-th="Price">&dollar;150</td>
             </tr>
             <tr>
-                <td>Plumber&rsquo; Locate</td>
-                <td>&check;</td>
-                <td></td>
-                <td></td>
-                <td>&check;</td>
-                <td>&dollar;175</td>
+                <td data-th="Service">Plumber&rsquo;s Locate</td>
+                <td data-th="Scope">&check;</td>
+                <td data-th="Report">&cross;</td>
+                <td data-th="Video">&cross;</td>
+                <td data-th="Locates">&check;</td>
+                <td data-th="Price">&dollar;175</td>
             </tr>
-            </tbody>
         </table>
-        <p>A &dollar;35 access fee will be applied if no accessible cleanout can be found and the SewerCam sewer scope technician must access the side-sewer through a pulled toilet or roof vent. Visit our Pipe Library for help <a href="pipe-library.html#cleanout">locating your cleanout</a>.</p>
+        <p>A &dollar;35 access fee will be applied if no accessible cleanout can be found and the Sewercam sewer scope technician must access the side-sewer through a pulled toilet or roof vent. Visit our Pipe Library for help <a href="pipe-library.html#cleanout">locating your cleanout</a>.</p>
     </section>
 </main>
 <footer id="footer">
