@@ -735,9 +735,6 @@ td::before {
   margin: 0;
 }
 
-.nav_definitionList {
-}
-
 .nav_definitionList::after {
   clear: both;
   content: "";
@@ -746,7 +743,7 @@ td::before {
 
 .definitionList_ul {
   list-style: none;
-  margin: 0 auto;
+  margin: .5em auto;
   padding: 0;
   width: 50%;
 }
@@ -759,8 +756,8 @@ td::before {
   float: right;
 }
 
-.nav_definitionList > li {
-  margin: .5em 0;
+.definitionList_ul > li {
+  margin-bottom: .5em;
 }
 
 dt {
