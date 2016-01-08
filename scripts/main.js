@@ -22,8 +22,6 @@ var readyWrap = function() {
     var security = document.getElementsByClassName('form_security');
     var time = document.getElementsByClassName('inspection_time');
 
-
-
     function inputWidthController(target) {
         var base = 25;  // base size for all inputs
         var chars = target.value.length;
@@ -35,7 +33,6 @@ var readyWrap = function() {
         } else {  // otherwise
             return target.size = base;  // set to the base width
         }
-
     }
 
     function sendReport() {
@@ -123,62 +120,3 @@ var readyWrap = function() {
 };
 
 ready(readyWrap);
-
-
-//// self-executing function for function-level variable scope
-//(function(){
-//    // declare my variables
-//    var honeypot = document.getElementById('altMessage');
-//    var form = document.getElementById('contact');
-//    // define anonymous function
-//    var botCheck = function(event){
-//        // halt submission while checking
-//        event.preventDefault();
-//        // give feedback for wait time
-//        $('.status').addClass('summary').text('Sending your message...'); // show success message
-//        // check for entry in honeypot field
-//        if (honeypot.value !== ''){
-//            $('.status').toggleClass('summary').addClass('warning').text('Sorry for the inconvenience, but you somehow triggered our anti-spam protection. Please use the contact information at the bottom of the page to reach us.'); // show anti-spam message
-//            return false;
-//        } else {
-//            var name = $("#name").val(); // get name field value
-//            var email = $("#email").val(); // get email field value
-//            var message = $("#message").val(); // get message field value
-//            $.ajax({
-//                    type: "POST",
-//                    url: "https://mandrillapp.com/api/1.0/messages/send.json",
-//                    data: {
-//                        'key': 'a3fQuy-kRF_7jvlhm-wkUA',
-//                        'message': {
-//                            'from_email': 'no-reply@hydro-physics.co',
-//                            'from_name': name,
-//                            'headers': {
-//                                'Reply-To': email
-//                            },
-//                            'subject': 'From Your Website: ' + email,
-//                            'text': message,
-//                            'to': [
-//                                {
-//                                    'email': 'clayton@hydro-physics.co',
-//                                    'name': 'Clayton Ashley',
-//                                    'type': 'to'
-//                                }]
-//                        }
-//                    }
-//                })
-//                .done(function(response) {
-//                    $('.status').text('Your message has been successfully sent. Thank you!'); // show success message
-//                    $("#name").val(''); // reset field after successful submission
-//                    $("#email").val(''); // reset field after successful submission
-//                    $("#message").val(''); // reset field after successful submission
-//                })
-//                .fail(function(response) {
-//                    $('.status').toggleClass('summary').addClass('warning').text('Sorry for the inconvenience, but something went wrong on our end. Please use the contact information at the bottom of the page to reach us.'); // show error message
-//                });
-//            return false; // prevent page refresh
-//        }
-//    }; // end bot check
-//    // event listener for form submission
-//    form.addEventListener('submit', botCheck);
-//
-//})(); // end self-executing function
