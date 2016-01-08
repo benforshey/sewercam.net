@@ -660,6 +660,10 @@ textarea {
     margin: 4em 0;
 }
 
+figcaption {
+    font-style: italic;
+}
+
 .serviceArea {
     margin: 4em 0;
 }
