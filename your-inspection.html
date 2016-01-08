@@ -99,10 +99,10 @@
         <h2>Schedule Your Inspection</h2>
         <form class="inspection_form">
             <p>Hello!</p>
-            <p>I&rsquo;d like to schedule a sewer scope at <input class="input__inline inspection_address" type="text" title="the inspection address" placeholder="the inspection address" size="25"> for <input class="input__inline inspection_time" type="text" title="my preferred date & time" placeholder="my preferred date & time" size="25">.</p>
-            <p> Please confirm my inspection date and time by contacting me at <input type="text" title="my contact info" class="input__inline inspection_contactInfo" placeholder="my contact info" size="25">.</p>
+            <p>I&rsquo;d like to schedule a sewer scope at <input class="input__inline inspection_address" type="text" title="the inspection address" placeholder="the inspection address" size="25" required> for <input class="input__inline inspection_time" type="text" title="my preferred date & time" placeholder="my preferred date & time" size="25" required>.</p>
+            <p> Please confirm my inspection date and time by contacting me at <input type="text" title="my contact info" class="input__inline inspection_contactInfo" placeholder="my contact info" size="25" required>.</p>
             <p>Regards,</p>
-            <p><input type="text" title="my name" class="input__inline inspection_customerName" placeholder="my name" size="25"></p>
+            <p><input type="text" title="my name" class="input__inline inspection_customerName" placeholder="my name" size="25" required></p>
             <input type="text" title="my security code" class="input__security form_security" size="25">
             <button class="button form_submit" type="submit">Send</button>
             <div class="form_feedback"></div>
@@ -158,8 +158,6 @@
         </table>
         <p>A &dollar;35 access fee will be applied if no accessible cleanout can be found and the SewerCam sewer scope technician must access the side-sewer through a pulled toilet or roof vent. Visit our Pipe Library for help <a href="pipe-library.html#cleanout">locating your cleanout</a>.</p>
     </section>
-
-
 </main>
 <footer id="footer">
 

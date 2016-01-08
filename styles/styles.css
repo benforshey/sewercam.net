@@ -513,15 +513,17 @@ A collection of my coding preferences and site-wide styles.
 }
 
 html {
+    /*background: url("backgrounds/concrete_seamless.png");*/
+    background: #343434;
     /* Border Box */
     box-sizing: border-box;
+    color: #343434;
     /* Wrap words to prevent breaking layout (like URL's). */
     word-wrap: break-word;
     /* placeholder; style per font*/
     word-spacing: inherit;
     overflow-wrap: break-word;
-    font: 400 1.125em / 1.5 "Open Sans", sans-serif;
-    height: 100%;  /* Google Maps requirement */
+    font: 400 1em / 1.5 "Open Sans", sans-serif;
 }
 
 /* Use border-box, yet allow outside elements (plugins, modules) to inherit parent box-sizing (from CSS Tricks). */
@@ -530,12 +532,15 @@ html {
 }
 
 body {
+    background: #ffffff;
+    box-shadow: 0 0 1px 0 #FFFEEA;
     margin: 0 auto;
     max-width: 53.333333333em;
+    padding: 1em;
 }
 
 /* Minimum responsive image, video. */
-img, video {
+img, figure, video {
     max-width: 100%;
 }
 
@@ -577,15 +582,15 @@ h3 {
 }
 
 .nav_site {
-    padding: .5em;
+    padding: .875em;
 }
 
 .nav__inline {
     display: inline;
 }
 
-.site_link__active {
-    border-bottom: 2px solid #3FCC52;
+.site_link {
+    padding: .125em .25em;
 }
 
 /*--------------------------------------------------
@@ -605,11 +610,12 @@ h3 {
 .cta_container {
     background: url(../images/low-poly.png) no-repeat center;
     height: 20em;
-    max-width: 53.333333333em;
     position: relative;
 }
 
 .cta_tagline {
+    font-weight: 700;
+    padding: 0 .125em;
     position: absolute;
     text-align: center;
     top: 1em;
@@ -617,10 +623,11 @@ h3 {
 }
 
 .cta_serviceLead {
-    font-weight: 700;
+    font-size: 1.125em;
+    padding: 0 .5em;
     position: absolute;
     text-align: center;
-    top: 9em;
+    top: 7.5em;
     width: 100%;
 }
 
@@ -649,17 +656,58 @@ textarea {
     display: inline;
 }
 
-.serviceArea {
+.scheduleYourInspection {
+    margin: 4em 0;
+}
 
+.serviceArea {
+    margin: 4em 0;
+}
+
+.pricingTable {
+    margin: 4em 0;
 }
 
 .serviceArea_map {
     margin: 0;
 }
 
+.nav_definitionList {
+}
+
+.nav_definitionList::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.definitionList_ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 50%;
+}
+
+.definitionList_ul:nth-child(odd) {
+    float: left;
+}
+
+.definitionList_ul:nth-child(even) {
+    float: right;
+}
+
+.nav_definitionList > li {
+    margin: .5em 0;
+}
+
 dt {
     font-weight: 700;
     margin-top: 1em;
+}
+
+dd {
+    border-bottom: 2px solid #343434;
+    padding-bottom: 1em;
 }
 
 /*--------------------------------------------------
@@ -674,18 +722,60 @@ dt {
 ----------------------------------------------------
 ---------------------------------------------------*/
 a {
-    background: rgba(226, 213, 40, .8);
+    border-bottom: 2px solid rgba(226, 213, 40, .8);
     color: inherit;
-    padding: 0 .125em;
     text-decoration: none;
+    transition: border .2s ease-in-out;
+}
+
+a:hover,
+a:active,
+a:focus {
+    border-bottom: 2px solid
 }
 
 .button {
+    background: #E2D528;
+    border: 2px solid #343434;
+    border-radius: 1px;
+    box-shadow: 0 0 0 2px #3FCC52;
+    font-weight: 700;
+    padding: .75em 1.5em;
+    transition: border .2s ease-in-out;
+}
 
+.button:active,
+.button:hover {
+    border: 2px solid #3FCC52;
 }
 
 .form_submit {
-    display: block;
+    background: #3FCC52;
+    box-shadow: 0 0 0 2px #E2D528;
+    margin-top: 1em;
+    padding: .25em 1em;
+}
+
+.form_submit:active,
+.form_submit:hover {
+    border: 2px solid #E2D528;
+}
+
+.site_link__active {
+    border-bottom: 2px solid #3FCC52;
+}
+
+input {
+    transition: border .4s ease-in-out;
+}
+
+input:hover {
+    border-bottom: 2px solid rgba(63, 204, 82, .6);
+}
+
+input:active,
+input:focus {
+    border-bottom: 2px solid #3FCC52;
 }
 
 .form_security {
@@ -709,23 +799,35 @@ a {
 7) Media Queries
 ----------------------------------------------------
 ---------------------------------------------------*/
-/* The absence of support for media queries is in fact the ﬁrst media query. -Bryan Rieger */
+/* The absence of support for media queries is in fact the first media query. -Bryan Rieger */
 /* Mobile styles are the default, then add media queries below. */
+@media screen and (min-width: 25em) {
+    html {
+        font: 400 1.125em / 1.5 "Open Sans", sans-serif;
+    }
+
+}
+
+
 
 @media screen and (min-width: 35em) {
     .cta_tagline {
         font-size: 2.5em;
+        top: .5em;
     }
 
     .cta_serviceLead {
-        top: 10em;
-        width: 100%;
+        top: 8.5em;
     }
 
-    .cta_action {
-        position: absolute;
-        text-align: center;
-        width: 100%;
+}
+
+@media screen and (min-width: 52.6876em) {
+    .cta_tagline {
+        top: 1em;
     }
 
+    .cta_serviceLead {
+        top: 8em;
+    }
 }
