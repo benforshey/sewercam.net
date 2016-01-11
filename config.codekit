@@ -189,6 +189,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/facebook-cover.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16408,
+		"inputAbbreviatedPath": "\/assets\/facebook-cover.png",
+		"outputAbbreviatedPath": "\/assets\/facebook-cover.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/favicon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3924,
+		"inputAbbreviatedPath": "\/assets\/favicon.png",
+		"outputAbbreviatedPath": "\/assets\/favicon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/favicon@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8486,
+		"inputAbbreviatedPath": "\/assets\/favicon@2x.png",
+		"outputAbbreviatedPath": "\/assets\/favicon@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/favicon@3x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14683,
+		"inputAbbreviatedPath": "\/assets\/favicon@3x.png",
+		"outputAbbreviatedPath": "\/assets\/favicon@3x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/favicons\/android-chrome-144x144.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -967,6 +1011,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 1
+		},
+	"\/images\/og-image.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 44239,
+		"inputAbbreviatedPath": "\/images\/og-image.png",
+		"outputAbbreviatedPath": "\/images\/og-image.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/images\/service-area-map.jpg": {
 		"fileType": 16384,
