@@ -643,9 +643,18 @@ nav::after {
 
 .cta_container {
   background: url(../images/low-poly.png) no-repeat center center;
-  height: 20em;
+  height: 24em;
   position: relative;
 }
+
+//.cta_tagline {
+//  font-size: 2.5em;
+//  top: .5em;
+//}
+//
+//.cta_serviceLead {
+//  top: 8.5em;
+//}
 
 .cta_tagline {
   font-weight: 700;
@@ -653,6 +662,7 @@ nav::after {
   position: absolute;
   text-align: center;
   top: 1em;
+  //top: .5em;
   width: 100%;
 }
 
@@ -661,14 +671,15 @@ nav::after {
   padding: 0 .5em;
   position: absolute;
   text-align: center;
-  top: 7.5em;
+  //top: 7.5em;
+  top: 8.5em;
   width: 100%;
 }
 
 .cta_action {
   position: absolute;
   text-align: center;
-  top: 15em;
+  top: 19.5em;
   width: 100%;
 }
 
@@ -907,6 +918,10 @@ input:focus {
     top: 8.5em;
   }
 
+  .cta_action {
+    top: 18em;
+  }
+
   td,
   th {
     display: table-cell;
@@ -939,12 +954,3 @@ input:focus {
   }
 }
 
-@media screen and (min-width: 52.6876em) {
-  .cta_tagline {
-    top: 1em;
-  }
-
-  .cta_serviceLead {
-    top: 8em;
-  }
-}
