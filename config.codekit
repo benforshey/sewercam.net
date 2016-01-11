@@ -1012,13 +1012,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
-	"\/images\/og-image.png": {
+	"\/images\/og-image-1.0.0.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 31047,
-		"inputAbbreviatedPath": "\/images\/og-image.png",
-		"outputAbbreviatedPath": "\/images\/og-image.png",
+		"inputAbbreviatedPath": "\/images\/og-image-1.0.0.png",
+		"outputAbbreviatedPath": "\/images\/og-image-1.0.0.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
