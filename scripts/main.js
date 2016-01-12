@@ -1,18 +1,21 @@
 function ready(fn) {
-    if (document.readyState != 'loading'){
+    if (document.readyState !== 'loading'){
         fn();
     } else if (document.addEventListener) {
         document.addEventListener('DOMContentLoaded', fn);
     } else {
         document.attachEvent('onreadystatechange', function() {
-            if (document.readyState != 'loading')
+            if (document.readyState !== 'loading')
             fn();
         });
     }
 }
 
 var readyWrap = function() {
+    'use strict';
+
     var address = document.getElementsByClassName('inspection_address');
+    var button = document.getElementsByClassName('form_submit')[0];
     var contactInfo = document.getElementsByClassName('inspection_contactInfo');
     var customerName = document.getElementsByClassName('inspection_customerName');
     var feedbackContainer = document.getElementsByClassName('form_feedback');
@@ -26,8 +29,8 @@ var readyWrap = function() {
         var base = 25;  // base size for all inputs
         var chars = target.value.length;
         var size = target.size;
-        if (chars > size) {  // if the input needs to expand (-5 char offset for UI)
-            return target.size = target.value.length;  // expand it (-5 char offset for UI)
+        if (chars > size) {  // if the input needs to expand
+            return target.size = target.value.length;  // expand it
         } else if (chars < size && chars > base) {  // if the input contains less than its width and still has more than 15 characters
             return target.size = target.value.length;  // shrink it
         } else {  // otherwise
@@ -62,9 +65,16 @@ var readyWrap = function() {
 
         if (security[0].value) {  // if the security input has a value, it's been filled
             feedback.className = "feedback_error";
-            feedback.innerHTML = "Sorry for the inconvenience, but you somehow triggered our anti-spam protection. Please use the contact information at the <a href='#footer'>bottom of the page</a> to reach us.";
+            feedback.innerHTML = "Sorry for the inconvenience, but you somehow triggered our anti-spam protection. Please use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
             feedbackContainer[0].appendChild(feedback);
         } else {
+
+            if (navigator.onLine === false) {
+                feedback.className = "feedback_warning";
+                feedback.innerHTML = "Sorry for the inconvenience, but you are currently offline. You can't send a message while offline. You can wait until you are back online or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
+                feedbackContainer[0].appendChild(feedback);
+            }
+
             AJAX.addEventListener('load', function (e) {
 
                 if (e.target.status === 200) {  // if the message was sent
@@ -77,7 +87,7 @@ var readyWrap = function() {
                     }
                 } else {  // something nonspecific has gone wrong
                     feedback.className = "feedback_warning";
-                    feedback.innerHTML = "Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the <a href='#footer'>bottom of the page</a> to reach us."
+                    feedback.innerHTML = "Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
                     feedbackContainer[0].appendChild(feedback);
                 }
             });
@@ -87,16 +97,37 @@ var readyWrap = function() {
         }
     }
 
+    function formConnectionManager() {
+        if (navigator.onLine === false) {
+            var feedback = document.createElement('p');
+
+            button.setAttribute('disabled', 'true');
+            button.className = 'button form_submit disabled';
+
+            feedback.className = "feedback_warning";
+            feedback.innerHTML = "Sorry for the inconvenience, but you are currently offline. You can't send a message while offline. You can wait until you are back online or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
+            return feedbackContainer[0].appendChild(feedback);
+
+        } else {
+            while (feedbackContainer[0].hasChildNodes()) {
+                feedbackContainer[0].removeChild(feedbackContainer[0].firstChild);
+            }
+
+            button.removeAttribute('disabled');
+            return button.className = 'button form_submit';
+        }
+    }
+
     /* event listeners & function calls */
 
     if (logoNav.length) {
-        logoNav[0].addEventListener('click', function (e) {
+        logoNav[0].addEventListener('click', function() {
             window.location.href = 'index.html';
         });
     }
 
 
-    if (inputs.length) {
+    if (inputs.length) {  // the only page with a form is 'your-sewer-scope.html'
 
         for (var i = 0; i < inputs.length; i ++) {
             inputs[i].addEventListener('input', function(e) {
@@ -108,6 +139,10 @@ var readyWrap = function() {
             e.preventDefault();
             sendReport();
         });
+
+        window.addEventListener('online', formConnectionManager);
+
+        window.addEventListener('offline', formConnectionManager);
     }
 
     if (typeof smoothScroll !== 'undefined') {  // check if smoothScroll script is present

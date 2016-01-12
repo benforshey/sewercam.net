@@ -1,0 +1,47 @@
+CACHE MANIFEST
+# v 0.0.3 on 16012
+
+CACHE:
+# html
+index.html
+your-sewer-scope.html
+common-problems.html
+pipe-library.html
+404.html
+
+# css
+styles/styles.css
+
+styles/fonts/exo2-bold-webfont.eot
+styles/fonts/exo2-bold-webfont.woff
+styles/fonts/exo2-bold-webfont.woff2
+styles/fonts/exo2-bold-webfont.ttf
+
+styles/fonts/exo2-regular-webfont.eot
+styles/fonts/exo2-regular-webfont.woff
+styles/fonts/exo2-regular-webfont.woff2
+styles/fonts/exo2-regular-webfont.ttf
+
+styles/fonts/opensans-bold-webfont.eot
+styles/fonts/opensans-bold-webfont.woff
+styles/fonts/opensans-bold-webfont.woff2
+styles/fonts/opensans-bold-webfont.ttf
+
+styles/fonts/opensans-italic-webfont.eot
+styles/fonts/opensans-italic-webfont.woff
+styles/fonts/opensans-italic-webfont.woff2
+styles/fonts/opensans-italic-webfont.ttf
+
+styles/fonts/opensans-regular-webfont.eot
+styles/fonts/opensans-regular-webfont.woff
+styles/fonts/opensans-regular-webfont.woff2
+styles/fonts/opensans-regular-webfont.ttf
+
+# javascript
+scripts/min/main-min.js
+scripts/min/smooth-scroll-min.js
+
+NETWORK:
+*
+
+FALLBACK:
