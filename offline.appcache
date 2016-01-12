@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v 0.0.3 on 16012
+# v 0.0.4 on 16012
 
 CACHE:
 # favicon
@@ -11,6 +11,11 @@ your-sewer-scope.html
 common-problems.html
 pipe-library.html
 404.html
+
+# images
+images/camera.svg
+images/low-poly.png
+images/service-area-map.jpg
 
 # css
 styles/styles.css
