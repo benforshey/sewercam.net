@@ -2,6 +2,9 @@ CACHE MANIFEST
 # v 0.0.3 on 16012
 
 CACHE:
+# favicon
+favicon.ico
+
 # html
 index.html
 your-sewer-scope.html
