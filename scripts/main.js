@@ -50,13 +50,13 @@ var readyWrap = function() {
         var email = {
             'key': 'a3fQuy-kRF_7jvlhm-wkUA',
             'message': {
-                'from_email': 'no-reply@hydro-physics.co',
+                'from_email': 'no-reply@sewercam.net',
                 'from_name': message.customerName,
                 'subject': 'From SewerCam: ' + message.customerName,
                 'html': '<p>Site: ' + message.address + '</p><p>Time: ' + message.time + '</p><p>Customer Name: ' + message.customerName + '</p><p>Customer Contact Info: ' + message.contactInfo + '</p>',
                 'to': [
                     {
-                        'email': 'clayton@hydro-physics.co',
+                        'email': 'clayton@sewercam.net',
                         'name': 'Clayton Ashley',
                         'type': 'to'
                     }]
