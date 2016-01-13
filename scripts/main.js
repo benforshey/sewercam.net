@@ -52,7 +52,7 @@ var readyWrap = function() {
             'message': {
                 'from_email': 'no-reply@sewercam.net',
                 'from_name': message.customerName,
-                'subject': 'From SewerCam: ' + message.customerName,
+                'subject': 'From Sewercam: ' + message.customerName,
                 'html': '<p>Site: ' + message.address + '</p><p>Time: ' + message.time + '</p><p>Customer Name: ' + message.customerName + '</p><p>Customer Contact Info: ' + message.contactInfo + '</p>',
                 'to': [
                     {
