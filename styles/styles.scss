@@ -657,22 +657,12 @@ nav::after {
   position: relative;
 }
 
-//.cta_tagline {
-//  font-size: 2.5em;
-//  top: .5em;
-//}
-//
-//.cta_serviceLead {
-//  top: 8.5em;
-//}
-
 .cta_tagline {
   font-weight: 700;
   padding: 0 .125em;
   position: absolute;
   text-align: center;
   top: 1em;
-  //top: .5em;
   width: 100%;
 }
 
@@ -681,7 +671,6 @@ nav::after {
   padding: 0 .5em;
   position: absolute;
   text-align: center;
-  //top: 7.5em;
   top: 8.5em;
   width: 100%;
 }
@@ -693,8 +682,8 @@ nav::after {
   width: 100%;
 }
 
-.scheduleYourInspection {
-
+figure {
+  margin: 1.5em auto;
 }
 
 input {
