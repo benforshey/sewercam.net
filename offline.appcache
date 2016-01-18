@@ -16,6 +16,27 @@ pipe-library.html
 images/camera.svg
 images/low-poly.png
 images/service-area-map.jpg
+images/break-400.jpg
+images/break-560.jpg
+images/break-1120.jpg
+images/buildup-400.jpg
+images/buildup-560.jpg
+images/buildup-1120.jpg
+images/corrosion-400.jpg
+images/corrosion-560.jpg
+images/corrosion-1120.jpg
+images/erosion-400.jpg
+images/erosion-560.jpg
+images/erosion-1120.jpg
+images/foreign-object-400.jpg
+images/foreign-object-560.jpg
+images/foreign-object-1120.jpg
+images/offset-400.jpg
+images/offset-560.jpg
+images/offset-1120.jpg
+images/root-intrusion-400.jpg
+images/root-intrusion-560.jpg
+images/root-intrusion-1120.jpg
 
 # css
 styles/styles.css
