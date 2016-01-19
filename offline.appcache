@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v 0.0.7 on 16018
+# v 0.0.8 on 16019
 
 CACHE:
 # favicon
@@ -25,12 +25,21 @@ images/buildup-1120.jpg
 images/corrosion-400.jpg
 images/corrosion-560.jpg
 images/corrosion-1120.jpg
+images/constriction-400.jpg
+images/constriction-560.jpg
+images/constriction-1120.jpg
 images/erosion-400.jpg
 images/erosion-560.jpg
 images/erosion-1120.jpg
 images/foreign-object-400.jpg
 images/foreign-object-560.jpg
 images/foreign-object-1120.jpg
+images/fracture-400.jpg
+images/fracture-560.jpg
+images/fracture-1120.jpg
+images/low-area-400.jpg
+images/low-area-560.jpg
+images/low-area-1120.jpg
 images/offset-400.jpg
 images/offset-560.jpg
 images/offset-1120.jpg

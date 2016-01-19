@@ -198,15 +198,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/common-problems-beta.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/common-problems-beta.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/common-problems.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -326,6 +317,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/constriction-1120.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 61164,
+		"inputAbbreviatedPath": "\/images\/constriction-1120.jpg",
+		"outputAbbreviatedPath": "\/images\/constriction-1120.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/constriction-400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17852,
+		"inputAbbreviatedPath": "\/images\/constriction-400.jpg",
+		"outputAbbreviatedPath": "\/images\/constriction-400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/constriction-560.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25686,
+		"inputAbbreviatedPath": "\/images\/constriction-560.jpg",
+		"outputAbbreviatedPath": "\/images\/constriction-560.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/corrosion-1120.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -396,7 +420,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 69306,
+		"initialSize": 84067,
 		"inputAbbreviatedPath": "\/images\/foreign-object-1120.jpg",
 		"outputAbbreviatedPath": "\/images\/foreign-object-1120.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -407,7 +431,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 20046,
+		"initialSize": 23065,
 		"inputAbbreviatedPath": "\/images\/foreign-object-400.jpg",
 		"outputAbbreviatedPath": "\/images\/foreign-object-400.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -418,9 +442,75 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 29091,
+		"initialSize": 34201,
 		"inputAbbreviatedPath": "\/images\/foreign-object-560.jpg",
 		"outputAbbreviatedPath": "\/images\/foreign-object-560.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/fracture-1120.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 95467,
+		"inputAbbreviatedPath": "\/images\/fracture-1120.jpg",
+		"outputAbbreviatedPath": "\/images\/fracture-1120.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/fracture-400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25928,
+		"inputAbbreviatedPath": "\/images\/fracture-400.jpg",
+		"outputAbbreviatedPath": "\/images\/fracture-400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/fracture-560.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 39366,
+		"inputAbbreviatedPath": "\/images\/fracture-560.jpg",
+		"outputAbbreviatedPath": "\/images\/fracture-560.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/low-area-1120.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 74954,
+		"inputAbbreviatedPath": "\/images\/low-area-1120.jpg",
+		"outputAbbreviatedPath": "\/images\/low-area-1120.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/low-area-400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21138,
+		"inputAbbreviatedPath": "\/images\/low-area-400.jpg",
+		"outputAbbreviatedPath": "\/images\/low-area-400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/low-area-560.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31532,
+		"inputAbbreviatedPath": "\/images\/low-area-560.jpg",
+		"outputAbbreviatedPath": "\/images\/low-area-560.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
