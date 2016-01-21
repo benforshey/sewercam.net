@@ -845,6 +845,12 @@ a:focus {
   border: 2px solid #3FCC52;
 }
 
+.inspection_form {
+  border: 1px solid #343434;
+  box-shadow: 1px 1px 0 0 #343434;
+  padding: 1em;
+}
+
 .form_submit {
   background: #3FCC52;
   box-shadow: 0 0 0 2px #E2D528;
