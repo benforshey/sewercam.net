@@ -960,12 +960,13 @@ input:focus {
 }
 
 @media screen and (min-width: 40.625em) {
-  .nav_site {
-    display: inline;
-  }
-
   .site_link {
     margin-right: 2em;
   }
 }
 
+@media screen and (min-width: 46.875em) {
+  .nav_site {
+    display: inline;
+  }
+}
