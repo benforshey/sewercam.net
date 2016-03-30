@@ -14,16 +14,12 @@ function ready(fn) {
 var readyWrap = function() {
     'use strict';
 
-    var address = document.getElementsByClassName('inspection_address');
     var button = document.getElementsByClassName('form_submit')[0];
-    var contactInfo = document.getElementsByClassName('inspection_contactInfo');
-    var customerName = document.getElementsByClassName('inspection_customerName');
     var feedbackContainer = document.getElementsByClassName('form_feedback');
     var inputs = document.getElementsByTagName('input');
     var inspectionForm = document.getElementsByClassName('inspection_form');
     var logoNav = document.getElementsByClassName('logoNav');
     var security = document.getElementsByClassName('form_security');
-    var time = document.getElementsByClassName('inspection_time');
 
     function inputWidthController(target) {
         var base = 25;  // base size for all inputs
@@ -41,27 +37,8 @@ var readyWrap = function() {
     function sendReport() {
         var AJAX = new XMLHttpRequest();
         var feedback = document.createElement('p');
-        var message = {
-            address: address[0].value,
-            contactInfo: contactInfo[0].value,
-            customerName: customerName[0].value,
-            time: time[0].value
-        };
-        var email = {
-            'key': 'a3fQuy-kRF_7jvlhm-wkUA',
-            'message': {
-                'from_email': 'no-reply@sewercam.net',
-                'from_name': message.customerName,
-                'subject': 'From Sewercam: ' + message.customerName,
-                'html': '<p>Site: ' + message.address + '</p><p>Time: ' + message.time + '</p><p>Customer Name: ' + message.customerName + '</p><p>Customer Contact Info: ' + message.contactInfo + '</p>',
-                'to': [
-                    {
-                        'email': 'clayton@sewercam.net',
-                        'name': 'Clayton Ashley',
-                        'type': 'to'
-                    }]
-            }
-        };
+        var payload = new FormData(inspectionForm[0]);
+        var URL = 'http://159.203.239.117:3025';
 
         if (security[0].value) {  // if the security input has a value, it's been filled
             feedback.className = "feedback_error";
@@ -76,7 +53,6 @@ var readyWrap = function() {
             }
 
             AJAX.addEventListener('load', function (e) {
-
                 if (e.target.status === 200) {  // if the message was sent
                     feedback.className = "feedback_success";
                     feedback.innerHTML = "Your message was sent!";
@@ -92,8 +68,8 @@ var readyWrap = function() {
                 }
             });
 
-            AJAX.open('POST', 'https://mandrillapp.com/api/1.0/messages/send.json', true);
-            AJAX.send(JSON.stringify(email));
+            AJAX.open('POST', URL, true);
+            AJAX.send(payload);
         }
     }
 
