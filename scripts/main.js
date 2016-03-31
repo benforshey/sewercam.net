@@ -113,7 +113,7 @@ var readyWrap = function() {
 
         inspectionForm[0].addEventListener('submit', function (e) {
             e.preventDefault();
-            sendReport();
+            return sendReport();
         });
 
         window.addEventListener('online', formConnectionManager);
