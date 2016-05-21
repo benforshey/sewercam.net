@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v 0.1.2 on 16142
+# v 0.1.3 on 16142
 
 CACHE:
 # favicon
@@ -16,36 +16,36 @@ pipe-library.html
 images/camera.svg
 images/low-poly.png
 images/service-area-map.jpg
-images/break-400.jpg
-images/break-560.jpg
-images/break-1120.jpg
-images/buildup-400.jpg
-images/buildup-560.jpg
-images/buildup-1120.jpg
-images/corrosion-400.jpg
-images/corrosion-560.jpg
-images/corrosion-1120.jpg
-images/constriction-400.jpg
-images/constriction-560.jpg
-images/constriction-1120.jpg
-images/erosion-400.jpg
-images/erosion-560.jpg
-images/erosion-1120.jpg
-images/foreign-object-400.jpg
-images/foreign-object-560.jpg
-images/foreign-object-1120.jpg
-images/fracture-400.jpg
-images/fracture-560.jpg
-images/fracture-1120.jpg
-images/low-area-400.jpg
-images/low-area-560.jpg
-images/low-area-1120.jpg
-images/offset-400.jpg
-images/offset-560.jpg
-images/offset-1120.jpg
-images/root-intrusion-400.jpg
-images/root-intrusion-560.jpg
-images/root-intrusion-1120.jpg
+images/break-400-color.jpg
+images/break-560-color.jpg
+images/break-1120-color.jpg
+images/buildup-400-color.jpg
+images/buildup-560-color.jpg
+images/buildup-1120-color.jpg
+images/corrosion-400-color.jpg
+images/corrosion-560-color.jpg
+images/corrosion-1120-color.jpg
+images/constriction-400-color.jpg
+images/constriction-560-color.jpg
+images/constriction-1120-color.jpg
+images/erosion-400-color.jpg
+images/erosion-560-color.jpg
+images/erosion-1120-color.jpg
+images/foreign-object-400-color.jpg
+images/foreign-object-560-color.jpg
+images/foreign-object-1120-color.jpg
+images/fracture-400-color.jpg
+images/fracture-560-color.jpg
+images/fracture-1120-color.jpg
+images/low-area-400-color.jpg
+images/low-area-560-color.jpg
+images/low-area-1120-color.jpg
+images/offset-400-color.jpg
+images/offset-560-color.jpg
+images/offset-1120-color.jpg
+images/root-intrusion-400-color.jpg
+images/root-intrusion-560-color.jpg
+images/root-intrusion-1120-color.jpg
 
 # css
 styles/styles.css
