@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "19115",
+"creatorBuild": "19127",
 "files": {
 	"\/404.html": {
 		"fileType": 8192,
@@ -251,266 +251,266 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/break-1120.jpg": {
+	"\/images\/break-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 73645,
-		"inputAbbreviatedPath": "\/images\/break-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/break-1120.jpg",
+		"initialSize": 78943,
+		"inputAbbreviatedPath": "\/images\/break-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/break-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/break-400.jpg": {
+	"\/images\/break-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 18477,
-		"inputAbbreviatedPath": "\/images\/break-400.jpg",
-		"outputAbbreviatedPath": "\/images\/break-400.jpg",
+		"initialSize": 17995,
+		"inputAbbreviatedPath": "\/images\/break-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/break-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/break-560.jpg": {
+	"\/images\/break-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 28855,
-		"inputAbbreviatedPath": "\/images\/break-560.jpg",
-		"outputAbbreviatedPath": "\/images\/break-560.jpg",
+		"initialSize": 29719,
+		"inputAbbreviatedPath": "\/images\/break-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/break-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/buildup-1120.jpg": {
+	"\/images\/buildup-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 62350,
-		"inputAbbreviatedPath": "\/images\/buildup-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/buildup-1120.jpg",
+		"initialSize": 42792,
+		"inputAbbreviatedPath": "\/images\/buildup-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/buildup-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/buildup-400.jpg": {
+	"\/images\/buildup-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 18370,
-		"inputAbbreviatedPath": "\/images\/buildup-400.jpg",
-		"outputAbbreviatedPath": "\/images\/buildup-400.jpg",
+		"initialSize": 11134,
+		"inputAbbreviatedPath": "\/images\/buildup-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/buildup-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/buildup-560.jpg": {
+	"\/images\/buildup-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 26425,
-		"inputAbbreviatedPath": "\/images\/buildup-560.jpg",
-		"outputAbbreviatedPath": "\/images\/buildup-560.jpg",
+		"initialSize": 16857,
+		"inputAbbreviatedPath": "\/images\/buildup-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/buildup-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/constriction-1120.jpg": {
+	"\/images\/constriction-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 61164,
-		"inputAbbreviatedPath": "\/images\/constriction-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/constriction-1120.jpg",
+		"initialSize": 57242,
+		"inputAbbreviatedPath": "\/images\/constriction-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/constriction-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/constriction-400.jpg": {
+	"\/images\/constriction-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 17852,
-		"inputAbbreviatedPath": "\/images\/constriction-400.jpg",
-		"outputAbbreviatedPath": "\/images\/constriction-400.jpg",
+		"initialSize": 13402,
+		"inputAbbreviatedPath": "\/images\/constriction-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/constriction-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/constriction-560.jpg": {
+	"\/images\/constriction-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 25686,
-		"inputAbbreviatedPath": "\/images\/constriction-560.jpg",
-		"outputAbbreviatedPath": "\/images\/constriction-560.jpg",
+		"initialSize": 21557,
+		"inputAbbreviatedPath": "\/images\/constriction-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/constriction-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/corrosion-1120.jpg": {
+	"\/images\/corrosion-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 80359,
-		"inputAbbreviatedPath": "\/images\/corrosion-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/corrosion-1120.jpg",
+		"initialSize": 73370,
+		"inputAbbreviatedPath": "\/images\/corrosion-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/corrosion-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/corrosion-400.jpg": {
+	"\/images\/corrosion-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 22580,
-		"inputAbbreviatedPath": "\/images\/corrosion-400.jpg",
-		"outputAbbreviatedPath": "\/images\/corrosion-400.jpg",
+		"initialSize": 16612,
+		"inputAbbreviatedPath": "\/images\/corrosion-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/corrosion-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/corrosion-560.jpg": {
+	"\/images\/corrosion-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 33706,
-		"inputAbbreviatedPath": "\/images\/corrosion-560.jpg",
-		"outputAbbreviatedPath": "\/images\/corrosion-560.jpg",
+		"initialSize": 27883,
+		"inputAbbreviatedPath": "\/images\/corrosion-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/corrosion-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/erosion-1120.jpg": {
+	"\/images\/erosion-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 75424,
-		"inputAbbreviatedPath": "\/images\/erosion-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/erosion-1120.jpg",
+		"initialSize": 86893,
+		"inputAbbreviatedPath": "\/images\/erosion-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/erosion-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/erosion-400.jpg": {
+	"\/images\/erosion-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 21357,
-		"inputAbbreviatedPath": "\/images\/erosion-400.jpg",
-		"outputAbbreviatedPath": "\/images\/erosion-400.jpg",
+		"initialSize": 19968,
+		"inputAbbreviatedPath": "\/images\/erosion-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/erosion-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/erosion-560.jpg": {
+	"\/images\/erosion-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 31519,
-		"inputAbbreviatedPath": "\/images\/erosion-560.jpg",
-		"outputAbbreviatedPath": "\/images\/erosion-560.jpg",
+		"initialSize": 33629,
+		"inputAbbreviatedPath": "\/images\/erosion-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/erosion-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/foreign-object-1120.jpg": {
+	"\/images\/foreign-object-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 84067,
-		"inputAbbreviatedPath": "\/images\/foreign-object-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/foreign-object-1120.jpg",
+		"initialSize": 72264,
+		"inputAbbreviatedPath": "\/images\/foreign-object-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/foreign-object-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/foreign-object-400.jpg": {
+	"\/images\/foreign-object-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 23065,
-		"inputAbbreviatedPath": "\/images\/foreign-object-400.jpg",
-		"outputAbbreviatedPath": "\/images\/foreign-object-400.jpg",
+		"initialSize": 16388,
+		"inputAbbreviatedPath": "\/images\/foreign-object-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/foreign-object-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/foreign-object-560.jpg": {
+	"\/images\/foreign-object-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 34201,
-		"inputAbbreviatedPath": "\/images\/foreign-object-560.jpg",
-		"outputAbbreviatedPath": "\/images\/foreign-object-560.jpg",
+		"initialSize": 27269,
+		"inputAbbreviatedPath": "\/images\/foreign-object-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/foreign-object-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/fracture-1120.jpg": {
+	"\/images\/fracture-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 95467,
-		"inputAbbreviatedPath": "\/images\/fracture-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/fracture-1120.jpg",
+		"initialSize": 45246,
+		"inputAbbreviatedPath": "\/images\/fracture-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/fracture-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/fracture-400.jpg": {
+	"\/images\/fracture-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 25928,
-		"inputAbbreviatedPath": "\/images\/fracture-400.jpg",
-		"outputAbbreviatedPath": "\/images\/fracture-400.jpg",
+		"initialSize": 10744,
+		"inputAbbreviatedPath": "\/images\/fracture-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/fracture-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/fracture-560.jpg": {
+	"\/images\/fracture-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 39366,
-		"inputAbbreviatedPath": "\/images\/fracture-560.jpg",
-		"outputAbbreviatedPath": "\/images\/fracture-560.jpg",
+		"initialSize": 17043,
+		"inputAbbreviatedPath": "\/images\/fracture-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/fracture-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/low-area-1120.jpg": {
+	"\/images\/low-area-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 74954,
-		"inputAbbreviatedPath": "\/images\/low-area-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/low-area-1120.jpg",
+		"initialSize": 62335,
+		"inputAbbreviatedPath": "\/images\/low-area-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/low-area-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/low-area-400.jpg": {
+	"\/images\/low-area-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 21138,
-		"inputAbbreviatedPath": "\/images\/low-area-400.jpg",
-		"outputAbbreviatedPath": "\/images\/low-area-400.jpg",
+		"initialSize": 14679,
+		"inputAbbreviatedPath": "\/images\/low-area-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/low-area-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/low-area-560.jpg": {
+	"\/images\/low-area-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 31532,
-		"inputAbbreviatedPath": "\/images\/low-area-560.jpg",
-		"outputAbbreviatedPath": "\/images\/low-area-560.jpg",
+		"initialSize": 24347,
+		"inputAbbreviatedPath": "\/images\/low-area-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/low-area-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -526,35 +526,35 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 1
 		},
-	"\/images\/offset-1120.jpg": {
+	"\/images\/offset-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 62675,
-		"inputAbbreviatedPath": "\/images\/offset-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/offset-1120.jpg",
+		"initialSize": 44925,
+		"inputAbbreviatedPath": "\/images\/offset-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/offset-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/offset-400.jpg": {
+	"\/images\/offset-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 18275,
-		"inputAbbreviatedPath": "\/images\/offset-400.jpg",
-		"outputAbbreviatedPath": "\/images\/offset-400.jpg",
+		"initialSize": 10498,
+		"inputAbbreviatedPath": "\/images\/offset-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/offset-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/offset-560.jpg": {
+	"\/images\/offset-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 26351,
-		"inputAbbreviatedPath": "\/images\/offset-560.jpg",
-		"outputAbbreviatedPath": "\/images\/offset-560.jpg",
+		"initialSize": 16841,
+		"inputAbbreviatedPath": "\/images\/offset-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/offset-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -570,35 +570,35 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/root-intrusion-1120.jpg": {
+	"\/images\/root-intrusion-1120-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 60635,
-		"inputAbbreviatedPath": "\/images\/root-intrusion-1120.jpg",
-		"outputAbbreviatedPath": "\/images\/root-intrusion-1120.jpg",
+		"initialSize": 90750,
+		"inputAbbreviatedPath": "\/images\/root-intrusion-1120-color.jpg",
+		"outputAbbreviatedPath": "\/images\/root-intrusion-1120-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/root-intrusion-400.jpg": {
+	"\/images\/root-intrusion-400-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 17811,
-		"inputAbbreviatedPath": "\/images\/root-intrusion-400.jpg",
-		"outputAbbreviatedPath": "\/images\/root-intrusion-400.jpg",
+		"initialSize": 20753,
+		"inputAbbreviatedPath": "\/images\/root-intrusion-400-color.jpg",
+		"outputAbbreviatedPath": "\/images\/root-intrusion-400-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/root-intrusion-560.jpg": {
+	"\/images\/root-intrusion-560-color.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 25772,
-		"inputAbbreviatedPath": "\/images\/root-intrusion-560.jpg",
-		"outputAbbreviatedPath": "\/images\/root-intrusion-560.jpg",
+		"initialSize": 34702,
+		"inputAbbreviatedPath": "\/images\/root-intrusion-560-color.jpg",
+		"outputAbbreviatedPath": "\/images\/root-intrusion-560-color.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
