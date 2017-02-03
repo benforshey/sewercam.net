@@ -830,6 +830,16 @@ a:focus {
   border-bottom: 2px solid #3FCC52;
 }
 
+a.footnote {
+  border-bottom: 0;
+  text-decoration: underline;
+}
+a.footnote:focus,
+a.footnote:hover,
+a.footnote:active {
+  border-bottom: 0;
+}
+
 .button {
   background: #E2D528;
   border: 2px solid #343434;

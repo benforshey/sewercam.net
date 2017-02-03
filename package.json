@@ -1,0 +1,20 @@
+{
+  "name": "sewercam.net.git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "style.autoprefixer": "postcss --use autoprefixer --replace ./styles/styles.css",
+    "style.sass": "node-sass --source-map true --output-style compressed ./styles/styles.scss ./styles/styles.css",
+    "style.build": "npm run style.sass && npm run style.autoprefixer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "6.7.2",
+    "node-sass": "4.5.0",
+    "postcss-cli": "2.6.0"
+  }
+}
