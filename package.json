@@ -13,8 +13,13 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "6.7.2",
     "node-sass": "4.5.0",
-    "postcss-cli": "2.6.0"
+    "postcss-cli": "2.6.0",
+    "autoprefixer": "6.7.4",
+    "cssnano": "3.10.0",
+    "gulp": "3.9.1",
+    "gulp-minify": "0.0.15",
+    "gulp-postcss": "6.3.0",
+    "gulp-sourcemaps": "2.4.1"
   }
 }

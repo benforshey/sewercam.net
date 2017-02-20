@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v 0.1.8 on 17034
+# v 0.1.9 on 17051
 
 CACHE:
 # favicon
@@ -76,8 +76,8 @@ styles/fonts/opensans-regular-webfont.woff2
 styles/fonts/opensans-regular-webfont.ttf
 
 # javascript
-scripts/min/main-min.js
-scripts/min/smooth-scroll-min.js
+scripts/dist/main-min.js
+scripts/dist/smooth-scroll-min.js
 
 NETWORK:
 *

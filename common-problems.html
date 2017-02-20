@@ -40,11 +40,22 @@
         !function(e){"use strict";e.loadCSS=function(t,n,s){var l,r=e.document,i=r.createElement("link");if(n)l=n;else{var o=(r.body||r.getElementsByTagName("head")[0]).childNodes;l=o[o.length-1]}var a=r.styleSheets;i.rel="stylesheet",i.href=t,i.media="only x",l.parentNode.insertBefore(i,n?l:l.nextSibling);var d=function(e){for(var t=i.href,n=a.length;n--;)if(a[n].href===t)return e();setTimeout(function(){d(e)})};return i.onloadcssdefined=d,d(function(){i.media=s||"all"}),i}}(this),loadCSS("styles/styles.css");
     </script>
     <script>
-        function loadJS(e,t){"use strict";var n=window.document.getElementsByTagName("script")[0],o=window.document.createElement("script");return o.src=e,o.async=!0,n.parentNode.insertBefore(o,n),t&&"function"==typeof t&&(o.onload=t),o}loadJS("scripts/min/main-min.js");
+        function loadJS(e,t){"use strict";var n=window.document.getElementsByTagName("script")[0],o=window.document.createElement("script");return o.src=e,o.async=!0,n.parentNode.insertBefore(o,n),t&&"function"==typeof t&&(o.onload=t),o}loadJS("scripts/dist/main-min.js");
     </script>
     <style>
         h1,h2,h3,html{font-weight:400;font-style:normal;font-variant:normal;font-stretch:normal}a,header{transition:border .2s ease-in-out}*,::after,::before{box-sizing:inherit}html{font-family:'Open Sans',sans-serif;box-sizing:border-box;color:#343434;word-wrap:break-word;word-spacing:inherit;overflow-wrap:break-word;font-size:1em;line-height:1.5;background:#343434}body{margin:0 auto;box-shadow:#fffeea 0 0 1px 0;max-width:53.3333em;padding:1em;background:#fff}.logoNav,header{margin-bottom:1em}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}.logoNav,.siteNav_ul{display:inline-block}header{border-bottom-width:2px;border-bottom-style:solid;border-bottom-color:#343434}h1{margin:.67em 0}h1,h2,h3{font-size:2.369em;line-height:1;font-family:'Exo 2',monospace}.nav_logoText{font-size:1.125em;margin-bottom:-.5em;margin-top:0}img{border:0}.site_link__active,a,dd{border-bottom-width:2px;border-bottom-style:solid}figure,img,video{max-width:100%}.nav_logoImage{width:6.5em}.siteNav_ul{float:right;list-style:none;padding:0;margin:0}.nav_site{font-size:.875em;margin-bottom:.875em}a{background-color:transparent;border-bottom-color:rgba(226,213,40,.8);color:inherit;text-decoration:none}.site_link__active{border-bottom-color:#3fcc52}.siteContent{margin:0 auto 3em}.singleColumn,.siteContent__singleColumn{margin:0 auto;max-width:35em}h2{font-size:1.777em}.definitionList_ul{list-style:none;margin:.5em auto;padding:0;width:50%}.definitionList_ul:nth-child(2n+1){float:left}.definitionList_ul>li{margin-bottom:.5em}.definitionList_ul:nth-child(2n){float:right}dt{font-weight:700;margin-top:1em}dd{border-bottom-color:#343434;padding-bottom:1em}@media screen and (min-width: 25em){html{font:400 1.125em / 1.5 "Open Sans", sans-serif}}@media screen and (min-width: 35em){.cta_tagline{font-size:2.5em;top:.5em}.cta_serviceLead{top:8.5em}.cta_action{top:18em}td,th{display:table-cell}td::before,th::before{content:none}footer>address{float:left;width:50%}.footer_legal{float:right;width:50%}}@media screen and (min-width: 40.625em){.site_link{margin-right:2em}}@media screen and (min-width: 46.75em){.nav_site{display: inline;}}
     </style>
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-83111707-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 </head>
 <body>
 <header role="banner">
@@ -219,17 +230,6 @@
         <p>All content on this site is subject to Sewercam&rsquo;s <a href="no-warranty.txt">No Warranty Clause</a>.</p>
     </section>
 </footer>
-<script src="scripts/min/smooth-scroll-min.js"></script>
-<!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-83111707-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<script src="scripts/dist/smooth-scroll-min.js"></script>
 </body>
 </html>

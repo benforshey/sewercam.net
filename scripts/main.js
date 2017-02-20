@@ -1,3 +1,5 @@
+/* eslint-env browser */
+/* global ga */
 function ready (fn) {
   if (document.readyState !== 'loading') {
     fn()
@@ -61,9 +63,14 @@ var readyWrap = function () {
           feedback.innerHTML = 'Your message was sent!'
           feedbackContainer[0].appendChild(feedback)
 
-          for (var i = 0; i < inputs.length; i++) { // empty the form on success
-            inputs[i].value = ''
-          }
+          ga('send', {  // since GA is loaded in the head, assume its presence
+            hitType: 'event',
+            eventCategory: 'Form',
+            eventAction: 'send',
+            eventLabel: 'Contact Form'
+          })
+
+          inspectionForm.reset()  // empty the form on success
         } else { // something nonspecific has gone wrong
           feedback.className = 'feedback_warning'
           feedback.innerHTML = "Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us."
