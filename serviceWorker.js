@@ -16,7 +16,9 @@ const cacheURIs = [  // String of pages & assets relative to project root. If an
   'styles/fonts/exo2-regular-webfont.woff2',
   'styles/fonts/opensans-bold-webfont.woff2',
   'styles/fonts/opensans-italic-webfont.woff2',
-  'styles/fonts/opensans-regular-webfont.woff2'
+  'styles/fonts/opensans-regular-webfont.woff2',
+  'images/camera.svg',
+  'images/low-poly.png'
 ]
 
 const errorText = `
