@@ -15,11 +15,11 @@
   "devDependencies": {
     "node-sass": "4.7.2",
     "postcss-cli": "4.1.1",
-    "autoprefixer": "7.2.4",
+    "autoprefixer": "7.2.5",
     "cssnano": "3.10.0",
     "gulp": "3.9.1",
     "gulp-minify": "2.1.0",
     "gulp-postcss": "7.0.1",
-    "gulp-sourcemaps": "2.6.3"
+    "gulp-sourcemaps": "2.6.4"
   }
 }
