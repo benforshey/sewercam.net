@@ -4,17 +4,20 @@ const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const babel = require('gulp-babel');
 
-gulp.task('js', () => {
-  gulp.src('./scripts/*.js')
+gulp.task('js', () =>
+  gulp.src(['./scripts/main.js', './scripts/smooth-scroll.js'])
+    .pipe(sourcemaps.init())
+    .pipe(babel())
     .pipe(minify({
       ext: {
         src: '.js',
         min: '-min.js',
       },
     }))
-    .pipe(gulp.dest('./scripts/dist/'));
-});
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./scripts/dist/')));
 
 gulp.task('css', () => {
   const plugins = [
@@ -29,4 +32,3 @@ gulp.task('css', () => {
 });
 
 gulp.task('default', ['js', 'css']);
-// gulp.task('default', ['js'])

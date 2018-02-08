@@ -1,3 +1,5 @@
+'use strict';
+
 /* eslint-env browser */
 /* global ga */
 function ready(fn) {
@@ -6,7 +8,7 @@ function ready(fn) {
   } else if (document.addEventListener) {
     document.addEventListener('DOMContentLoaded', fn);
   } else {
-    document.attachEvent('onreadystatechange', () => {
+    document.attachEvent('onreadystatechange', function () {
       if (document.readyState !== 'loading') {
         fn();
       }
@@ -15,31 +17,33 @@ function ready(fn) {
 }
 
 function readyWrap() {
-  const button = document.getElementsByClassName('form_submit')[0];
-  const feedbackContainer = document.getElementsByClassName('form_feedback');
-  const inputs = document.getElementsByTagName('input');
-  const inspectionForm = document.getElementsByClassName('inspection_form');
-  const logoNav = document.getElementsByClassName('logoNav');
-  const security = document.getElementsByClassName('form_security');
+  var button = document.getElementsByClassName('form_submit')[0];
+  var feedbackContainer = document.getElementsByClassName('form_feedback');
+  var inputs = document.getElementsByTagName('input');
+  var inspectionForm = document.getElementsByClassName('inspection_form');
+  var logoNav = document.getElementsByClassName('logoNav');
+  var security = document.getElementsByClassName('form_security');
 
   // Register the ServiceWorker.
   if ('serviceWorker' in navigator) {
     // The service worker cannot access parent directories (apart from explicity setting scope), so keep it in the root directory.
-    navigator.serviceWorker.register('serviceWorker.js').then((registration) => {
-      console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
-    }).catch((e) => {
-      console.log(`ServiceWorker registration failed: ${e}`);
+    navigator.serviceWorker.register('serviceWorker.js').then(function (registration) {
+      console.log('ServiceWorker registration successful with scope: ' + registration.scope);
+    }).catch(function (e) {
+      console.log('ServiceWorker registration failed: ' + e);
     });
   }
 
   function inputWidthController(target) {
-    const base = 25; // base size for all inputs
-    const chars = target.value.length;
-    const size = target.size;
-    if (chars > size) { // if the input needs to expand
+    var base = 25; // base size for all inputs
+    var chars = target.value.length;
+    var size = target.size;
+    if (chars > size) {
+      // if the input needs to expand
       target.size = target.value.length; // expand it
       return target.size;
-    } else if (chars < size && chars > base) { // if the input contains less than its width and still has more than 15 characters
+    } else if (chars < size && chars > base) {
+      // if the input contains less than its width and still has more than 15 characters
       target.size = target.value.length; // shrink it
       return target.size;
     } // otherwise
@@ -48,12 +52,13 @@ function readyWrap() {
   }
 
   function sendReport() {
-    const AJAX = new XMLHttpRequest();
-    const feedback = document.createElement('p');
-    const payload = new FormData(inspectionForm[0]);
-    const URL = 'https://message.integrisweb.com/sms/';
+    var AJAX = new XMLHttpRequest();
+    var feedback = document.createElement('p');
+    var payload = new FormData(inspectionForm[0]);
+    var URL = 'https://message.integrisweb.com/sms/';
 
-    if (security[0].value) { // if the security input has a value, it's been filled
+    if (security[0].value) {
+      // if the security input has a value, it's been filled
       feedback.className = 'feedback_error';
       feedback.innerHTML = "Sorry for the inconvenience, but you somehow triggered our anti-spam protection. Please use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
       feedbackContainer[0].appendChild(feedback);
@@ -64,8 +69,9 @@ function readyWrap() {
         feedbackContainer[0].appendChild(feedback);
       }
 
-      AJAX.addEventListener('load', (e) => {
-        if (e.target.status === 200) { // if the message was sent
+      AJAX.addEventListener('load', function (e) {
+        if (e.target.status === 200) {
+          // if the message was sent
           feedback.className = 'feedback_success';
           feedback.innerHTML = 'Your message was sent!';
           feedbackContainer[0].appendChild(feedback);
@@ -74,11 +80,12 @@ function readyWrap() {
             hitType: 'event',
             eventCategory: 'Form',
             eventAction: 'send',
-            eventLabel: 'Contact Form',
+            eventLabel: 'Contact Form'
           });
 
           document.querySelector('.inspection_form').reset(); // empty the form on success
-        } else { // something nonspecific has gone wrong
+        } else {
+          // something nonspecific has gone wrong
           feedback.className = 'feedback_warning';
           feedback.innerHTML = "Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
           feedbackContainer[0].appendChild(feedback);
@@ -92,7 +99,7 @@ function readyWrap() {
 
   function formConnectionManager() {
     if (navigator.onLine === false) {
-      const feedback = document.createElement('p');
+      var feedback = document.createElement('p');
 
       button.setAttribute('disabled', 'true');
       button.className = 'button form_submit disabled';
@@ -113,19 +120,20 @@ function readyWrap() {
   /* event listeners & function calls */
 
   if (logoNav.length) {
-    logoNav[0].addEventListener('click', () => {
+    logoNav[0].addEventListener('click', function () {
       window.location = 'https://sewercam.net/';
     });
   }
 
-  if (inputs.length) { // the only page with a form is 'your-sewer-scope.html'
-    for (let i = 0; i < inputs.length; i += 1) {
-      inputs[i].addEventListener('input', (e) => {
+  if (inputs.length) {
+    // the only page with a form is 'your-sewer-scope.html'
+    for (var i = 0; i < inputs.length; i += 1) {
+      inputs[i].addEventListener('input', function (e) {
         inputWidthController(e.target);
       });
     }
 
-    inspectionForm[0].addEventListener('submit', (e) => {
+    inspectionForm[0].addEventListener('submit', function (e) {
       e.preventDefault();
       return sendReport();
     });
@@ -135,12 +143,14 @@ function readyWrap() {
     window.addEventListener('offline', formConnectionManager);
   }
 
-  if (typeof smoothScroll !== 'undefined') { // check if smoothScroll script is present
+  if (typeof smoothScroll !== 'undefined') {
+    // check if smoothScroll script is present
     smoothScroll.init({ // init smooth scroll
       easing: 'easeInOutQuad',
-      speed: 500,
+      speed: 500
     });
   }
 }
 
 ready(readyWrap);
+//# sourceMappingURL=main.js.map

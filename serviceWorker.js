@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = 'Offline First';
-const cacheVersion = '1.0.1';
+const cacheVersion = '1.0.2';
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
@@ -75,8 +75,8 @@ self.addEventListener('fetch', (event) => {
 
       const networked = fetch(event.request)
 
-      // Regardless of cache success or failure, we are fetching a fresh copy
-      // from the network to update our cache.
+        // Regardless of cache success or failure, we are fetching a fresh copy
+        // from the network to update our cache.
         .then(fetchedFromNetwork, unableToResolve) // Handle network request success and failure.
         .catch(unableToResolve); // Catch errors from fetchedFromNetwork handler.
 

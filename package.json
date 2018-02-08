@@ -7,19 +7,23 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "style.autoprefixer": "postcss --use autoprefixer --replace ./styles/styles.css",
     "style.sass": "node-sass --source-map true --output-style compressed ./styles/styles.scss ./styles/styles.css",
-    "style.build": "npm run style.sass && npm run style.autoprefixer"
+    "style.build": "npm run style.sass && npm run style.autoprefixer",
+    "gulp": "node_modules/.bin/gulp"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "4.7.2",
-    "postcss-cli": "4.1.1",
     "autoprefixer": "7.2.5",
+    "babel-core": "6.26.0",
+    "babel-preset-env": "1.6.1",
     "cssnano": "3.10.0",
     "gulp": "3.9.1",
+    "gulp-babel": "7.0.1",
     "gulp-minify": "2.1.0",
     "gulp-postcss": "7.0.1",
-    "gulp-sourcemaps": "2.6.4"
+    "gulp-sourcemaps": "2.6.4",
+    "node-sass": "4.7.2",
+    "postcss-cli": "4.1.1"
   }
 }

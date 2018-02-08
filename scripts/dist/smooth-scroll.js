@@ -1,3 +1,7 @@
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 /*!
  * smooth-scroll v7.1.1: Animate scrolling to anchor links
  * (c) 2015 Chris Ferdinandi
@@ -6,14 +10,14 @@
  */
 
 (function (root, factory) {
-    if ( typeof define === 'function' && define.amd ) {
+    if (typeof define === 'function' && define.amd) {
         define([], factory(root));
-    } else if ( typeof exports === 'object' ) {
+    } else if ((typeof exports === 'undefined' ? 'undefined' : _typeof(exports)) === 'object') {
         module.exports = factory(root);
     } else {
         root.smoothScroll = factory(root);
     }
-})(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
+})(typeof global !== 'undefined' ? global : undefined.window || undefined.global, function (root) {
 
     'use strict';
 
@@ -33,9 +37,8 @@
         easing: 'easeInOutCubic',
         offset: 0,
         updateURL: true,
-        callback: function () {}
+        callback: function callback() {}
     };
-
 
     //
     // Methods
@@ -48,7 +51,7 @@
      * @param {Object}   objects  The objects to merge together
      * @returns {Object}          Merged values of defaults and options
      */
-    var extend = function () {
+    var extend = function extend() {
 
         // Variables
         var extended = {};
@@ -57,18 +60,18 @@
         var length = arguments.length;
 
         // Check if a deep merge
-        if ( Object.prototype.toString.call( arguments[0] ) === '[object Boolean]' ) {
+        if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
             deep = arguments[0];
             i++;
         }
 
         // Merge the object into the extended object
-        var merge = function (obj) {
-            for ( var prop in obj ) {
-                if ( Object.prototype.hasOwnProperty.call( obj, prop ) ) {
+        var merge = function merge(obj) {
+            for (var prop in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, prop)) {
                     // If deep merge and property is an object, merge properties
-                    if ( deep && Object.prototype.toString.call(obj[prop]) === '[object Object]' ) {
-                        extended[prop] = extend( true, extended[prop], obj[prop] );
+                    if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
+                        extended[prop] = extend(true, extended[prop], obj[prop]);
                     } else {
                         extended[prop] = obj[prop];
                     }
@@ -77,13 +80,12 @@
         };
 
         // Loop through each object and conduct a merge
-        for ( ; i < length; i++ ) {
+        for (; i < length; i++) {
             var obj = arguments[i];
             merge(obj);
         }
 
         return extended;
-
     };
 
     /**
@@ -92,8 +94,8 @@
      * @param  {Node} elem The element to get the height of
      * @return {Number}    The element's height in pixels
      */
-    var getHeight = function ( elem ) {
-        return Math.max( elem.scrollHeight, elem.offsetHeight, elem.clientHeight );
+    var getHeight = function getHeight(elem) {
+        return Math.max(elem.scrollHeight, elem.offsetHeight, elem.clientHeight);
     };
 
     /**
@@ -103,7 +105,7 @@
      * @param  {String}  selector Selector to match against (class, ID, data attribute, or tag)
      * @return {Boolean|Element}  Returns null if not match found
      */
-    var getClosest = function ( elem, selector ) {
+    var getClosest = function getClosest(elem, selector) {
 
         // Variables
         var firstChar = selector.charAt(0);
@@ -111,44 +113,44 @@
         var attribute, value;
 
         // If selector is a data attribute, split attribute from value
-        if ( firstChar === '[' ) {
+        if (firstChar === '[') {
             selector = selector.substr(1, selector.length - 2);
-            attribute = selector.split( '=' );
+            attribute = selector.split('=');
 
-            if ( attribute.length > 1 ) {
+            if (attribute.length > 1) {
                 value = true;
-                attribute[1] = attribute[1].replace( /"/g, '' ).replace( /'/g, '' );
+                attribute[1] = attribute[1].replace(/"/g, '').replace(/'/g, '');
             }
         }
 
         // Get closest match
-        for ( ; elem && elem !== document; elem = elem.parentNode ) {
+        for (; elem && elem !== document; elem = elem.parentNode) {
 
             // If selector is a class
-            if ( firstChar === '.' ) {
-                if ( supports ) {
-                    if ( elem.classList.contains( selector.substr(1) ) ) {
+            if (firstChar === '.') {
+                if (supports) {
+                    if (elem.classList.contains(selector.substr(1))) {
                         return elem;
                     }
                 } else {
-                    if ( new RegExp('(^|\\s)' + selector.substr(1) + '(\\s|$)').test( elem.className ) ) {
+                    if (new RegExp('(^|\\s)' + selector.substr(1) + '(\\s|$)').test(elem.className)) {
                         return elem;
                     }
                 }
             }
 
             // If selector is an ID
-            if ( firstChar === '#' ) {
-                if ( elem.id === selector.substr(1) ) {
+            if (firstChar === '#') {
+                if (elem.id === selector.substr(1)) {
                     return elem;
                 }
             }
 
             // If selector is a data attribute
-            if ( firstChar === '[' ) {
-                if ( elem.hasAttribute( attribute[0] ) ) {
-                    if ( value ) {
-                        if ( elem.getAttribute( attribute[0] ) === attribute[1] ) {
+            if (firstChar === '[') {
+                if (elem.hasAttribute(attribute[0])) {
+                    if (value) {
+                        if (elem.getAttribute(attribute[0]) === attribute[1]) {
                             return elem;
                         }
                     } else {
@@ -158,14 +160,12 @@
             }
 
             // If selector is a tag
-            if ( elem.tagName.toLowerCase() === selector ) {
+            if (elem.tagName.toLowerCase() === selector) {
                 return elem;
             }
-
         }
 
         return null;
-
     };
 
     /**
@@ -175,7 +175,7 @@
      * @author Mathias Bynens
      * @link https://github.com/mathiasbynens/CSS.escape
      */
-    var escapeCharacters = function ( id ) {
+    var escapeCharacters = function escapeCharacters(id) {
         var string = String(id);
         var length = string.length;
         var index = -1;
@@ -190,26 +190,19 @@
             // If the character is NULL (U+0000), then throw an
             // `InvalidCharacterError` exception and terminate these steps.
             if (codeUnit === 0x0000) {
-                throw new InvalidCharacterError(
-                    'Invalid character: the input contains U+0000.'
-                );
+                throw new InvalidCharacterError('Invalid character: the input contains U+0000.');
             }
 
             if (
-                // If the character is in the range [\1-\1F] (U+0001 to U+001F) or is
+            // If the character is in the range [\1-\1F] (U+0001 to U+001F) or is
             // U+007F, […]
-            (codeUnit >= 0x0001 && codeUnit <= 0x001F) || codeUnit == 0x007F ||
-                // If the character is the first character and is in the range [0-9]
-                // (U+0030 to U+0039), […]
-            (index === 0 && codeUnit >= 0x0030 && codeUnit <= 0x0039) ||
-                // If the character is the second character and is in the range [0-9]
-                // (U+0030 to U+0039) and the first character is a `-` (U+002D), […]
-            (
-                index === 1 &&
-                codeUnit >= 0x0030 && codeUnit <= 0x0039 &&
-                firstCodeUnit === 0x002D
-            )
-            ) {
+            codeUnit >= 0x0001 && codeUnit <= 0x001F || codeUnit == 0x007F ||
+            // If the character is the first character and is in the range [0-9]
+            // (U+0030 to U+0039), […]
+            index === 0 && codeUnit >= 0x0030 && codeUnit <= 0x0039 ||
+            // If the character is the second character and is in the range [0-9]
+            // (U+0030 to U+0039) and the first character is a `-` (U+002D), […]
+            index === 1 && codeUnit >= 0x0030 && codeUnit <= 0x0039 && firstCodeUnit === 0x002D) {
                 // http://dev.w3.org/csswg/cssom/#escape-a-character-as-code-point
                 result += '\\' + codeUnit.toString(16) + ' ';
                 continue;
@@ -219,14 +212,7 @@
             // greater than or equal to U+0080, is `-` (U+002D) or `_` (U+005F), or
             // is in one of the ranges [0-9] (U+0030 to U+0039), [A-Z] (U+0041 to
             // U+005A), or [a-z] (U+0061 to U+007A), […]
-            if (
-                codeUnit >= 0x0080 ||
-                codeUnit === 0x002D ||
-                codeUnit === 0x005F ||
-                codeUnit >= 0x0030 && codeUnit <= 0x0039 ||
-                codeUnit >= 0x0041 && codeUnit <= 0x005A ||
-                codeUnit >= 0x0061 && codeUnit <= 0x007A
-            ) {
+            if (codeUnit >= 0x0080 || codeUnit === 0x002D || codeUnit === 0x005F || codeUnit >= 0x0030 && codeUnit <= 0x0039 || codeUnit >= 0x0041 && codeUnit <= 0x005A || codeUnit >= 0x0061 && codeUnit <= 0x007A) {
                 // the character itself
                 result += string.charAt(index);
                 continue;
@@ -235,7 +221,6 @@
             // Otherwise, the escaped character.
             // http://dev.w3.org/csswg/cssom/#escape-a-character
             result += '\\' + string.charAt(index);
-
         }
         return result;
     };
@@ -248,20 +233,20 @@
      * @param {Number} time Time animation should take to complete
      * @returns {Number}
      */
-    var easingPattern = function ( type, time ) {
+    var easingPattern = function easingPattern(type, time) {
         var pattern;
-        if ( type === 'easeInQuad' ) pattern = time * time; // accelerating from zero velocity
-        if ( type === 'easeOutQuad' ) pattern = time * (2 - time); // decelerating to zero velocity
-        if ( type === 'easeInOutQuad' ) pattern = time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time; // acceleration until halfway, then deceleration
-        if ( type === 'easeInCubic' ) pattern = time * time * time; // accelerating from zero velocity
-        if ( type === 'easeOutCubic' ) pattern = (--time) * time * time + 1; // decelerating to zero velocity
-        if ( type === 'easeInOutCubic' ) pattern = time < 0.5 ? 4 * time * time * time : (time - 1) * (2 * time - 2) * (2 * time - 2) + 1; // acceleration until halfway, then deceleration
-        if ( type === 'easeInQuart' ) pattern = time * time * time * time; // accelerating from zero velocity
-        if ( type === 'easeOutQuart' ) pattern = 1 - (--time) * time * time * time; // decelerating to zero velocity
-        if ( type === 'easeInOutQuart' ) pattern = time < 0.5 ? 8 * time * time * time * time : 1 - 8 * (--time) * time * time * time; // acceleration until halfway, then deceleration
-        if ( type === 'easeInQuint' ) pattern = time * time * time * time * time; // accelerating from zero velocity
-        if ( type === 'easeOutQuint' ) pattern = 1 + (--time) * time * time * time * time; // decelerating to zero velocity
-        if ( type === 'easeInOutQuint' ) pattern = time < 0.5 ? 16 * time * time * time * time * time : 1 + 16 * (--time) * time * time * time * time; // acceleration until halfway, then deceleration
+        if (type === 'easeInQuad') pattern = time * time; // accelerating from zero velocity
+        if (type === 'easeOutQuad') pattern = time * (2 - time); // decelerating to zero velocity
+        if (type === 'easeInOutQuad') pattern = time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time; // acceleration until halfway, then deceleration
+        if (type === 'easeInCubic') pattern = time * time * time; // accelerating from zero velocity
+        if (type === 'easeOutCubic') pattern = --time * time * time + 1; // decelerating to zero velocity
+        if (type === 'easeInOutCubic') pattern = time < 0.5 ? 4 * time * time * time : (time - 1) * (2 * time - 2) * (2 * time - 2) + 1; // acceleration until halfway, then deceleration
+        if (type === 'easeInQuart') pattern = time * time * time * time; // accelerating from zero velocity
+        if (type === 'easeOutQuart') pattern = 1 - --time * time * time * time; // decelerating to zero velocity
+        if (type === 'easeInOutQuart') pattern = time < 0.5 ? 8 * time * time * time * time : 1 - 8 * --time * time * time * time; // acceleration until halfway, then deceleration
+        if (type === 'easeInQuint') pattern = time * time * time * time * time; // accelerating from zero velocity
+        if (type === 'easeOutQuint') pattern = 1 + --time * time * time * time * time; // decelerating to zero velocity
+        if (type === 'easeInOutQuint') pattern = time < 0.5 ? 16 * time * time * time * time * time : 1 + 16 * --time * time * time * time * time; // acceleration until halfway, then deceleration
         return pattern || time; // no easing, no acceleration
     };
 
@@ -273,7 +258,7 @@
      * @param {Number} offset Number of pixels by which to offset scroll
      * @returns {Number}
      */
-    var getEndLocation = function ( anchor, headerHeight, offset ) {
+    var getEndLocation = function getEndLocation(anchor, headerHeight, offset) {
         var location = 0;
         if (anchor.offsetParent) {
             do {
@@ -290,12 +275,8 @@
      * @private
      * @returns {Number}
      */
-    var getDocumentHeight = function () {
-        return Math.max(
-            root.document.body.scrollHeight, root.document.documentElement.scrollHeight,
-            root.document.body.offsetHeight, root.document.documentElement.offsetHeight,
-            root.document.body.clientHeight, root.document.documentElement.clientHeight
-        );
+    var getDocumentHeight = function getDocumentHeight() {
+        return Math.max(root.document.body.scrollHeight, root.document.documentElement.scrollHeight, root.document.body.offsetHeight, root.document.documentElement.offsetHeight, root.document.body.clientHeight, root.document.documentElement.clientHeight);
     };
 
     /**
@@ -304,8 +285,8 @@
      * @param {String} options Link-specific options as a data attribute string
      * @returns {Object}
      */
-    var getDataOptions = function ( options ) {
-        return !options || !(typeof JSON === 'object' && typeof JSON.parse === 'function') ? {} : JSON.parse( options );
+    var getDataOptions = function getDataOptions(options) {
+        return !options || !((typeof JSON === 'undefined' ? 'undefined' : _typeof(JSON)) === 'object' && typeof JSON.parse === 'function') ? {} : JSON.parse(options);
     };
 
     /**
@@ -314,14 +295,14 @@
      * @param {Element} anchor The element to scroll to
      * @param {Boolean} url Whether or not to update the URL history
      */
-    var updateUrl = function ( anchor, url ) {
-        if ( root.history.pushState && (url || url === 'true') && root.location.protocol !== 'file:' ) {
-            root.history.pushState( null, null, [root.location.protocol, '//', root.location.host, root.location.pathname, root.location.search, anchor].join('') );
+    var updateUrl = function updateUrl(anchor, url) {
+        if (root.history.pushState && (url || url === 'true') && root.location.protocol !== 'file:') {
+            root.history.pushState(null, null, [root.location.protocol, '//', root.location.host, root.location.pathname, root.location.search, anchor].join(''));
         }
     };
 
-    var getHeaderHeight = function ( header ) {
-        return header === null ? 0 : ( getHeight( header ) + header.offsetTop );
+    var getHeaderHeight = function getHeaderHeight(header) {
+        return header === null ? 0 : getHeight(header) + header.offsetTop;
     };
 
     /**
@@ -331,19 +312,23 @@
      * @param {Element} anchor The element to scroll to
      * @param {Object} options
      */
-    smoothScroll.animateScroll = function ( toggle, anchor, options ) {
+    smoothScroll.animateScroll = function (toggle, anchor, options) {
 
         // Options and overrides
-        var overrides = getDataOptions( toggle ? toggle.getAttribute('data-options') : null );
-        var settings = extend( settings || defaults, options || {}, overrides ); // Merge user options with defaults
+        var overrides = getDataOptions(toggle ? toggle.getAttribute('data-options') : null);
+        var settings = extend(settings || defaults, options || {}, overrides); // Merge user options with defaults
         anchor = '#' + escapeCharacters(anchor.substr(1)); // Escape special characters and leading numbers
 
         // Selectors and variables
         var anchorElem = anchor === '#' ? root.document.documentElement : root.document.querySelector(anchor);
         var startLocation = root.pageYOffset; // Current location on the page
-        if ( !fixedHeader ) { fixedHeader = root.document.querySelector( settings.selectorHeader ); }  // Get the fixed header if not already set
-        if ( !headerHeight ) { headerHeight = getHeaderHeight( fixedHeader ); } // Get the height of a fixed header if one exists and not already set
-        var endLocation = getEndLocation( anchorElem, headerHeight, parseInt(settings.offset, 10) ); // Scroll to location
+        if (!fixedHeader) {
+            fixedHeader = root.document.querySelector(settings.selectorHeader);
+        } // Get the fixed header if not already set
+        if (!headerHeight) {
+            headerHeight = getHeaderHeight(fixedHeader);
+        } // Get the height of a fixed header if one exists and not already set
+        var endLocation = getEndLocation(anchorElem, headerHeight, parseInt(settings.offset, 10)); // Scroll to location
         var animationInterval; // interval timer
         var distance = endLocation - startLocation; // distance to travel
         var documentHeight = getDocumentHeight();
@@ -360,12 +345,12 @@
          * @param {Number} endLocation Scroll to location
          * @param {Number} animationInterval How much to scroll on this loop
          */
-        var stopAnimateScroll = function (position, endLocation, animationInterval) {
+        var stopAnimateScroll = function stopAnimateScroll(position, endLocation, animationInterval) {
             var currentLocation = root.pageYOffset;
-            if ( position == endLocation || currentLocation == endLocation || ( (root.innerHeight + currentLocation) >= documentHeight ) ) {
+            if (position == endLocation || currentLocation == endLocation || root.innerHeight + currentLocation >= documentHeight) {
                 clearInterval(animationInterval);
                 anchorElem.focus();
-                settings.callback( toggle, anchor ); // Run callbacks after animation complete
+                settings.callback(toggle, anchor); // Run callbacks after animation complete
             }
         };
 
@@ -373,12 +358,12 @@
          * Loop scrolling animation
          * @private
          */
-        var loopAnimateScroll = function () {
+        var loopAnimateScroll = function loopAnimateScroll() {
             timeLapsed += 16;
-            percentage = ( timeLapsed / parseInt(settings.speed, 10) );
-            percentage = ( percentage > 1 ) ? 1 : percentage;
-            position = startLocation + ( distance * easingPattern(settings.easing, percentage) );
-            root.scrollTo( 0, Math.floor(position) );
+            percentage = timeLapsed / parseInt(settings.speed, 10);
+            percentage = percentage > 1 ? 1 : percentage;
+            position = startLocation + distance * easingPattern(settings.easing, percentage);
+            root.scrollTo(0, Math.floor(position));
             stopAnimateScroll(position, endLocation, animationInterval);
         };
 
@@ -386,7 +371,7 @@
          * Set interval timer
          * @private
          */
-        var startAnimateScroll = function () {
+        var startAnimateScroll = function startAnimateScroll() {
             animationInterval = setInterval(loopAnimateScroll, 16);
         };
 
@@ -394,24 +379,23 @@
          * Reset position to fix weird iOS bug
          * @link https://github.com/cferdinandi/smooth-scroll/issues/45
          */
-        if ( root.pageYOffset === 0 ) {
-            root.scrollTo( 0, 0 );
+        if (root.pageYOffset === 0) {
+            root.scrollTo(0, 0);
         }
 
         // Start scrolling animation
         startAnimateScroll();
-
     };
 
     /**
      * If smooth scroll element clicked, animate scroll
      * @private
      */
-    var eventHandler = function (event) {
-        var toggle = getClosest( event.target, settings.selector );
-        if ( toggle && toggle.tagName.toLowerCase() === 'a' ) {
+    var eventHandler = function eventHandler(event) {
+        var toggle = getClosest(event.target, settings.selector);
+        if (toggle && toggle.tagName.toLowerCase() === 'a') {
             event.preventDefault(); // Prevent default click event
-            smoothScroll.animateScroll( toggle, toggle.hash, settings); // Animate scroll
+            smoothScroll.animateScroll(toggle, toggle.hash, settings); // Animate scroll
         }
     };
 
@@ -421,11 +405,11 @@
      * @param  {Function} eventTimeout Timeout function
      * @param  {Object} settings
      */
-    var eventThrottler = function (event) {
-        if ( !eventTimeout ) {
-            eventTimeout = setTimeout(function() {
+    var eventThrottler = function eventThrottler(event) {
+        if (!eventTimeout) {
+            eventTimeout = setTimeout(function () {
                 eventTimeout = null; // Reset timeout
-                headerHeight = getHeaderHeight( fixedHeader ); // Get the height of a fixed header if one exists
+                headerHeight = getHeaderHeight(fixedHeader); // Get the height of a fixed header if one exists
             }, 66);
         }
     };
@@ -437,11 +421,11 @@
     smoothScroll.destroy = function () {
 
         // If plugin isn't already initialized, stop
-        if ( !settings ) return;
+        if (!settings) return;
 
         // Remove event listeners
-        root.document.removeEventListener( 'click', eventHandler, false );
-        root.removeEventListener( 'resize', eventThrottler, false );
+        root.document.removeEventListener('click', eventHandler, false);
+        root.removeEventListener('resize', eventThrottler, false);
 
         // Reset varaibles
         settings = null;
@@ -455,30 +439,30 @@
      * @public
      * @param {Object} options User settings
      */
-    smoothScroll.init = function ( options ) {
+    smoothScroll.init = function (options) {
 
         // feature test
-        if ( !supports ) return;
+        if (!supports) return;
 
         // Destroy any existing initializations
         smoothScroll.destroy();
 
         // Selectors and variables
-        settings = extend( defaults, options || {} ); // Merge user options with defaults
-        fixedHeader = root.document.querySelector( settings.selectorHeader ); // Get the fixed header
-        headerHeight = getHeaderHeight( fixedHeader );
+        settings = extend(defaults, options || {}); // Merge user options with defaults
+        fixedHeader = root.document.querySelector(settings.selectorHeader); // Get the fixed header
+        headerHeight = getHeaderHeight(fixedHeader);
 
         // When a toggle is clicked, run the click handler
-        root.document.addEventListener('click', eventHandler, false );
-        if ( fixedHeader ) { root.addEventListener( 'resize', eventThrottler, false ); }
-
+        root.document.addEventListener('click', eventHandler, false);
+        if (fixedHeader) {
+            root.addEventListener('resize', eventThrottler, false);
+        }
     };
-
 
     //
     // Public APIs
     //
 
     return smoothScroll;
-
 });
+//# sourceMappingURL=smooth-scroll.js.map
