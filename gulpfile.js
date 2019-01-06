@@ -7,7 +7,7 @@ const cssnano = require('cssnano');
 const babel = require('gulp-babel');
 
 gulp.task('js', () =>
-  gulp.src(['./scripts/main.js', './scripts/smooth-scroll.js'])
+  gulp.src('./scripts/main.js')
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(minify({
@@ -21,7 +21,7 @@ gulp.task('js', () =>
 
 gulp.task('css', () => {
   const plugins = [
-    autoprefixer({ browsers: ['last 3 version'] }),
+    autoprefixer({ browsers: ['last 3 versions'] }),
     cssnano(),
   ];
   return gulp.src('./css/*.css')

@@ -134,13 +134,6 @@ function readyWrap() {
 
     window.addEventListener('offline', formConnectionManager);
   }
-
-  if (typeof smoothScroll !== 'undefined') { // check if smoothScroll script is present
-    smoothScroll.init({ // init smooth scroll
-      easing: 'easeInOutQuad',
-      speed: 500,
-    });
-  }
 }
 
 ready(readyWrap);

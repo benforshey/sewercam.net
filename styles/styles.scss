@@ -528,12 +528,13 @@ html {
   /* Border Box */
   box-sizing: border-box;
   color: #343434;
+  font: 400 1em / 1.5 "Open Sans", sans-serif;
+  overflow-wrap: break-word;
+  scroll-behavior: smooth;
   /* Wrap words to prevent breaking layout (like URL's). */
   word-wrap: break-word;
   /* placeholder; style per font*/
   word-spacing: inherit;
-  overflow-wrap: break-word;
-  font: 400 1em / 1.5 "Open Sans", sans-serif;
 }
 
 /* Use border-box, yet allow outside elements (plugins, modules) to inherit parent box-sizing (from CSS Tricks). */

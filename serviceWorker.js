@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = 'Offline First';
-const cacheVersion = '1.0.2';
+const cacheVersion = '1.0.3';
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
@@ -10,7 +10,6 @@ const cacheURIs = [
   'pipe-library.html',
   '404.html',
   'scripts/dist/main-min.js',
-  'scripts/dist/smooth-scroll-min.js',
   'styles/styles.css',
   'styles/styles.css.map',
   'favicon.ico',
