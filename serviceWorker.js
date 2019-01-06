@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = 'Offline First';
-const cacheVersion = '1.0.3';
+const cacheVersion = '1.0.4';
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
@@ -13,11 +13,11 @@ const cacheURIs = [
   'styles/styles.css',
   'styles/styles.css.map',
   'favicon.ico',
-  'styles/fonts/exo2-bold-webfont.woff2',
-  'styles/fonts/exo2-regular-webfont.woff2',
-  'styles/fonts/opensans-bold-webfont.woff2',
-  'styles/fonts/opensans-italic-webfont.woff2',
-  'styles/fonts/opensans-regular-webfont.woff2',
+  'fonts/exo2-bold-webfont.woff2',
+  'fonts/exo2-regular-webfont.woff2',
+  'fonts/opensans-bold-webfont.woff2',
+  'fonts/opensans-italic-webfont.woff2',
+  'fonts/opensans-regular-webfont.woff2',
   'images/camera.svg',
   'images/low-poly.png',
 ];
