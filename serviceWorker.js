@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = 'Offline First'
-const cacheVersion = '1.0.5'
+const cacheVersion = '1.0.6'
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
@@ -18,6 +18,9 @@ const cacheURIs = [
 	'fonts/opensans-bold-webfont.woff2',
 	'fonts/opensans-italic-webfont.woff2',
 	'fonts/opensans-regular-webfont.woff2',
+	'images/fleet-540.jpg',
+	'images/fleet-1080.jpg',
+	'images/fleet-2160.jpg',
 	'images/camera.svg',
 	'images/low-poly.png'
 ]
