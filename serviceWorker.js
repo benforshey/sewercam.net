@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = 'Offline First'
-const cacheVersion = '1.0.6'
+const cacheVersion = '1.0.7'
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
