@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = "Offline First";
-const cacheVersion = "1.0.8";
+const cacheVersion = "1.0.9";
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
@@ -10,6 +10,7 @@ const cacheURIs = [
   "pipe-library.html",
   "404.html",
   "scripts/dist/main-min.js",
+  "scripts/dist/main-min.js.map",
   "styles/styles.css",
   "styles/styles.css.map",
   "favicon.ico",
@@ -78,9 +79,7 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") {
     console.log(
-      `WORKER: is only set to respond to 'GET' requests. Fetch event '${
-        event.request.method
-      }' ignored for URL '${event.request.url}'`
+      `WORKER: is only set to respond to 'GET' requests. Fetch event '${event.request.method}' ignored for URL '${event.request.url}'`
     );
 
     const request = event.request;
