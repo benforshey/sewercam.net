@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = "Offline First";
-const cacheVersion = "1.0.9";
+const cacheVersion = "1.0.10";
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
@@ -29,6 +29,7 @@ const cacheURIs = [
 const errorText = `
 <h1>Sorry, you&rsquo;re offline right now.</h1>
 <h2>Error Code: 503&mdash;Service Unavailable</h2>
+<p>You can reach us at <a href="tel:3606281782">(360) 628-1782</a></p>
 <p>When you regain internet connection, please try visiting this page again. If you are using a <a href="http://browsehappy.com/" target="_blank" rel="noopener noreferrer">modern browser</a>, each page you visit will save itself for future visits&mdash;even when your&rsquo;re offline.</p>
 `;
 
