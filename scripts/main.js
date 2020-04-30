@@ -24,19 +24,19 @@ function readyWrap() {
   const security = document.getElementsByClassName("form_security");
 
   // Register the ServiceWorker.
-  if ("serviceWorker" in navigator) {
-    // The service worker cannot access parent directories (apart from explicity setting scope), so keep it in the root directory.
-    navigator.serviceWorker
-      .register("serviceWorker.js")
-      .then((registration) => {
-        console.log(
-          `ServiceWorker registration successful with scope: ${registration.scope}`
-        );
-      })
-      .catch((e) => {
-        console.log(`ServiceWorker registration failed: ${e}`);
-      });
-  }
+  // if ("serviceWorker" in navigator) {
+  //   // The service worker cannot access parent directories (apart from explicity setting scope), so keep it in the root directory.
+  //   navigator.serviceWorker
+  //     .register("serviceWorker.js")
+  //     .then((registration) => {
+  //       console.log(
+  //         `ServiceWorker registration successful with scope: ${registration.scope}`
+  //       );
+  //     })
+  //     .catch((e) => {
+  //       console.log(`ServiceWorker registration failed: ${e}`);
+  //     });
+  // }
 
   function inputWidthController(target) {
     const base = 25; // base size for all inputs
