@@ -185,15 +185,15 @@
     </header>
     <main class="siteContent siteContent__singleColumn" role="main">
       <section class="serviceArea">
-        <h2>Sewercam Service Area</h2>
+        <h2 id="service-area">Sewercam Service Area</h2>
         <p>
           We service throughout the South Puget Sound, including Seattle,
           Tacoma, and Olympia.
         </p>
-        <p style="font-style: italic; font-size: 0.875em;">
-          Please note that we may add a $50 mileage fee for locations far
-          outside our Primary Service Area. If you have questions about our
-          mileage fee, please call
+        <p style="font-style: italic; font-size: 0.875em; color: orangered;">
+          <sup>*</sup> Please note that we may add a $50 mileage fee for
+          locations far outside our Primary Service Area. If you have questions
+          about our mileage fee, please call
           <a href="tel:3606281782">(360) 628-1782</a> to speak with a
           technician.
         </p>
@@ -272,7 +272,14 @@
         </form>
       </section>
       <section class="pricingTable">
-        <h2>Sewer Scope Pricing</h2>
+        <h2>
+          Sewer Scope Pricing<a
+            href="#service-area"
+            class="footnote"
+            style="color: orangered; margin-left: 1ch;"
+            >*</a
+          >
+        </h2>
         <table class="pricingTable_table" id="pricing">
           <tr>
             <th>Service</th>
@@ -291,7 +298,7 @@
             <td data-th="Price">
               &dollar;225
               <a href="#access-fee" class="footnote">
-                <sup>2</sup>
+                <sup>&ddagger;</sup>
               </a>
             </td>
           </tr>
@@ -299,7 +306,7 @@
             <td data-th="Service">
               Re-Scope
               <a href="#re-scope" class="footnote">
-                <sup>1</sup>
+                <sup>&dagger;</sup>
               </a>
             </td>
             <td data-th="Scope">&check;</td>
@@ -309,7 +316,7 @@
             <td data-th="Price">
               &dollar;150
               <a href="#access-fee" class="footnote">
-                <sup>2</sup>
+                <sup>&ddagger;</sup>
               </a>
             </td>
           </tr>
@@ -324,15 +331,16 @@
         </table>
 
         <p id="re-scope">
-          <sup>1</sup> This reduced rate is used when Sewercam has already
-          scoped your line and is returning for a followup scope. This usually
-          happens when a repair is needed before the entire line can be scoped.
+          <sup>&dagger;</sup> This reduced rate is used when Sewercam has
+          already scoped your line and is returning for a followup scope. This
+          usually happens when a repair is needed before the entire line can be
+          scoped.
         </p>
         <p id="access-fee">
-          <sup>2</sup> A &dollar;35 access fee will be applied if no accessible
-          cleanout can be found and the Sewercam sewer scope technician must
-          access the side-sewer through a pulled toilet. Visit our Pipe Library
-          for help
+          <sup>&ddagger;</sup> A &dollar;35 access fee will be applied if no
+          accessible cleanout can be found and the Sewercam sewer scope
+          technician must access the side-sewer through a pulled toilet. Visit
+          our Pipe Library for help
           <a href="pipe-library.html#cleanout">locating your cleanout</a>.
         </p>
       </section>
