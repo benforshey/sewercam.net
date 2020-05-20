@@ -1,6 +1,6 @@
 /* eslint-env worker */
 const cacheName = "Offline First";
-const cacheVersion = "1.0.11";
+const cacheVersion = "1.0.12";
 // String of pages & assets relative to project root.
 // If any file in this list fails, the whole service worker fails to install.
 const cacheURIs = [
@@ -23,7 +23,7 @@ const cacheURIs = [
   "images/fleet-1080.jpg",
   "images/fleet-2160.jpg",
   "images/camera.svg",
-  "images/low-poly.png"
+  "images/low-poly.png",
 ];
 
 const errorText = `
@@ -33,12 +33,12 @@ const errorText = `
 <p>When you regain internet connection, please try visiting this page again. If you are using a <a href="http://browsehappy.com/" target="_blank" rel="noopener noreferrer">modern browser</a>, each page you visit will save itself for future visits&mdash;even when your&rsquo;re offline.</p>
 `;
 
-self.addEventListener("install", event => {
+self.addEventListener("install", (event) => {
   console.log(`WORKER: ${event.type} started`);
   event.waitUntil(
     caches
       .open(`${cacheName}, ${cacheVersion}`)
-      .then(cache => {
+      .then((cache) => {
         console.log(`WORKER: ${event.type} event opened cache`);
         return cache.addAll(cacheURIs);
       })
@@ -48,11 +48,11 @@ self.addEventListener("install", event => {
   );
 });
 
-self.addEventListener("activate", event => {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches
       .keys() // This method returns a promise that resolves to an array of available cache keys.
-      .then(keys =>
+      .then((keys) =>
         Promise.all(
           // Return a promise that resolves when outdated caches are deleted.
           keys
@@ -77,7 +77,7 @@ self.addEventListener("activate", event => {
   );
 });
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") {
     console.log(
       `WORKER: is only set to respond to 'GET' requests. Fetch event '${event.request.method}' ignored for URL '${event.request.url}'`
@@ -91,7 +91,7 @@ self.addEventListener("fetch", event => {
     );
   }
   event.respondWith(
-    caches.match(event.request).then(cached => {
+    caches.match(event.request).then((cached) => {
       console.log(`WORKER: fetch event ${cached ? "(cached)" : "(network)"} `);
 
       const networked = fetch(event.request)
@@ -115,7 +115,7 @@ self.addEventListener("fetch", event => {
 
         caches
           .open(`${cacheName}, ${cacheVersion}`) // Open a cache to store the response.
-          .then(cache => {
+          .then((cache) => {
             cache.put(event.request, cacheCopy); // Store the response.
           })
           .then(() => {
@@ -133,8 +133,8 @@ self.addEventListener("fetch", event => {
           status: 503,
           statusText: "Service Unavailable",
           headers: new Headers({
-            "Content-Type": "text/html; charset=utf-8"
-          })
+            "Content-Type": "text/html; charset=utf-8",
+          }),
         });
       }
     })
