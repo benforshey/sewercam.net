@@ -1,23 +1,31 @@
 {
-  "name": "sewercam.net.git",
+  "name": "sewercam.net",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "style.autoprefixer": "postcss --use autoprefixer --replace ./styles/styles.css",
-    "style.sass": "node-sass --source-map true --output-style compressed ./styles/styles.scss ./styles/styles.css",
-    "style.build": "npm run style.sass && npm run style.autoprefixer",
-    "gulp": "node_modules/.bin/gulp"
+    "build": "gulp",
+    "dev": "serve"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "resolutions": {
+    "graceful-fs": "4.2.3"
+  },
+  "dependencies": {
+    "@now/node": "^1.5.1",
+    "@types/twilio": "^2.11.0",
+    "dotenv": "^8.2.0",
+    "twilio": "^3.42.2"
+  },
   "devDependencies": {
     "autoprefixer": "8.6.5",
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
     "cssnano": "4.0.0",
+    "graceful-fs": "4.2.2",
     "gulp": "3.9.1",
     "gulp-babel": "7.0.1",
     "gulp-minify": "3.1.0",
