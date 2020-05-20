@@ -15,7 +15,7 @@ export default (req: NowRequest, res: NowResponse) => {
     .create({
       body: `${name} @ ${contact} for ${address} on ${time}`,
       from: process.env.TWILIO_NUMBER,
-      to: "+13606281782",
+      to: process.env.CLIENT_NUMBER,
     })
     .then(() => res.status(200).end())
     .catch((error: Error) => res.status(400).end(JSON.parse(error.message)));
