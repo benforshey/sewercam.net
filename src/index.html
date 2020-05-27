@@ -124,7 +124,7 @@
           o
         );
       }
-      loadJS("/scripts/dist/main-min.js");
+      loadJS("/scripts/main-min.js");
     </script>
 
     <!-- Google Analytics -->
@@ -152,12 +152,6 @@
       ga("create", "UA-83111707-2", "auto");
       ga("send", "pageview");
     </script>
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/dialog-polyfill/dialog-polyfill.css"
-    />
-    <script src="https://unpkg.com/dialog-polyfill"></script>
   </head>
 
   <body>
@@ -286,46 +280,5 @@
         </p>
       </section>
     </footer>
-    <dialog>
-      <h2>New Name—Same Great Service</h2>
-      <p>
-        Clayton Ashley and his team of technicians are proud to continue serving
-        you under the new name of <em>Sewercam</em>. If you&rsquo;re looking for
-        something from the previous website that you cannot find, please
-        reference the following:
-      </p>
-      <ul>
-        <li>
-          Our rates, service area, and contact form can be found under
-          <a href="https://www.sewercam.net/your-sewer-scope.html"
-            >Your Sewer Scope</a
-          >.
-        </li>
-        <li>
-          Your videos from a previous inspection can still be found under
-          <a href="https://videos.sewercam.net/">Videos</a>.
-        </li>
-      </ul>
-      <p>
-        As always, Clayton and his team can be reached at
-        <a href="tel:3606281782">(360) 628-1782</a> if you have any additional
-        questions.
-      </p>
-      <button class="button" id="close-modal">Close</button>
-    </dialog>
-    <script>
-      var dialog = document.querySelector("dialog");
-      var close = document.querySelector("#close-modal");
-
-      dialogPolyfill.registerDialog(dialog);
-
-      if (window.location.search === "?from-hydro-physics=true") {
-        dialog.showModal();
-      }
-
-      close.addEventListener("click", function () {
-        dialog.close();
-      });
-    </script>
   </body>
 </html>
