@@ -9,16 +9,16 @@
     "build": "gulp",
     "dev": "serve public"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "author": "",
   "license": "ISC",
-  "resolutions": {
-    "graceful-fs": "4.2.3"
-  },
   "dependencies": {
-    "@now/node": "^1.5.1",
+    "@now/node": "^1.8.5",
     "@types/twilio": "^2.11.0",
     "dotenv": "^8.2.0",
-    "twilio": "^3.42.2"
+    "twilio": "^3.55.1"
   },
   "devDependencies": {
     "autoprefixer": "8.6.5",
@@ -32,7 +32,7 @@
     "gulp-postcss": "7.0.1",
     "gulp-replace": "^1.0.0",
     "gulp-sourcemaps": "2.6.4",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.14.1",
     "postcss-cli": "5.0.1"
   }
 }
