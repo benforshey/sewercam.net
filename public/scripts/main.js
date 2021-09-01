@@ -1,8 +1,8 @@
 "use strict";
 
 /* eslint-env browser */
-/* global ga */
 
+/* global ga */
 function ready(fn) {
   if (document.readyState !== "loading") {
     fn();
@@ -23,9 +23,8 @@ function readyWrap() {
   var inputs = document.getElementsByTagName("input");
   var inspectionForm = document.getElementsByClassName("inspection_form");
   var logoNav = document.getElementsByClassName("logoNav");
-  var security = document.getElementsByClassName("form_security");
+  var security = document.getElementsByClassName("form_security"); // Register the ServiceWorker.
 
-  // Register the ServiceWorker.
   if ("serviceWorker" in navigator) {
     // The service worker cannot access parent directories (apart from explicity setting scope), so keep it in the root directory.
     navigator.serviceWorker.register("serviceWorker.js").then(function (registration) {
@@ -37,18 +36,25 @@ function readyWrap() {
 
   function inputWidthController(target) {
     var base = 25; // base size for all inputs
+
     var chars = target.value.length;
     var size = target.size;
+
     if (chars > size) {
       // if the input needs to expand
       target.size = target.value.length; // expand it
+
       return target.size;
     } else if (chars < size && chars > base) {
       // if the input contains less than its width and still has more than 15 characters
       target.size = target.value.length; // shrink it
+
       return target.size;
     } // otherwise
+
+
     target.size = base; // set to the base width
+
     return target.size;
   }
 
@@ -60,7 +66,6 @@ function readyWrap() {
       feedback.className = "feedback_error";
       feedback.innerHTML = "Sorry for the inconvenience, but you somehow triggered our anti-spam protection. Please use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
       feedbackContainer[0].appendChild(feedback);
-
       return ga("send", {
         hitType: "event",
         eventCategory: "Form",
@@ -72,7 +77,6 @@ function readyWrap() {
         feedback.className = "feedback_warning";
         feedback.innerHTML = "Sorry for the inconvenience, but you are currently offline. You can't send a message while offline. You can wait until you are back online or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
         feedbackContainer[0].appendChild(feedback);
-
         return ga("send", {
           hitType: "event",
           eventCategory: "Form",
@@ -83,7 +87,6 @@ function readyWrap() {
 
       button.textContent = "Sending Message…";
       button.setAttribute("disabled", "true");
-
       return fetch("/api/sms-send", {
         method: "POST",
         headers: {
@@ -100,7 +103,6 @@ function readyWrap() {
           feedback.className = "feedback_warning";
           feedback.innerHTML = "Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
           feedbackContainer[0].appendChild(feedback);
-
           return ga("send", {
             hitType: "event",
             eventCategory: "Form",
@@ -112,11 +114,9 @@ function readyWrap() {
         feedback.className = "feedback_success";
         feedback.innerHTML = "Your message was sent!";
         feedbackContainer[0].appendChild(feedback);
-
         document.querySelector(".inspection_form").reset();
         button.textContent = "Send";
         button.removeAttribute("disabled");
-
         return ga("send", {
           hitType: "event",
           eventCategory: "Form",
@@ -125,7 +125,6 @@ function readyWrap() {
         });
       }).catch(function (error) {
         console.error(error);
-
         return ga("send", {
           hitType: "event",
           eventCategory: "Form",
@@ -139,14 +138,13 @@ function readyWrap() {
   function formConnectionManager() {
     if (navigator.onLine === false) {
       var feedback = document.createElement("p");
-
       button.setAttribute("disabled", "true");
       button.className = "button form_submit disabled";
-
       feedback.className = "feedback_warning";
       feedback.innerHTML = "Sorry for the inconvenience, but you are currently offline. You can't send a message while offline. You can wait until you are back online or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
       return feedbackContainer[0].appendChild(feedback);
     }
+
     while (feedbackContainer[0].hasChildNodes()) {
       feedbackContainer[0].removeChild(feedbackContainer[0].firstChild);
     }
@@ -154,8 +152,9 @@ function readyWrap() {
     button.className = "button form_submit";
     return button.removeAttribute("disabled");
   }
-
   /* event listeners & function calls */
+
+
   if (logoNav.length) {
     logoNav[0].addEventListener("click", function () {
       window.location = "https://sewercam.net/";
@@ -174,9 +173,7 @@ function readyWrap() {
       e.preventDefault();
       return sendRequest();
     });
-
     window.addEventListener("online", formConnectionManager);
-
     window.addEventListener("offline", formConnectionManager);
   }
 }
