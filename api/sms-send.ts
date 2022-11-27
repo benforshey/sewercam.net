@@ -14,6 +14,7 @@ export default (req: NowRequest, res: NowResponse) => {
   try {
     const { address, contact, name, time } = req.body;
 
+    console.log(address, contact, name, time);
     return client
       .phlo(process.env.PHLO_ID)
       .run({
