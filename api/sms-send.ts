@@ -14,7 +14,6 @@ export default (req: NowRequest, res: NowResponse) => {
   try {
     const { address, contact, name, time } = req.body;
 
-    console.log(address, contact, name, time);
     return client
       .phlo(process.env.PLIVO_PHLO_ID)
       .run({
@@ -25,6 +24,6 @@ export default (req: NowRequest, res: NowResponse) => {
       .then(() => res.status(200).end())
       .catch((error: Error) => res.status(400).end(error));
   } catch (error) {
-    return res.status(400).end(JSON.parse(error));
+    return res.status(400).end(error);
   }
 };
