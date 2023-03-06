@@ -1,6 +1,6 @@
 import { NowRequest, NowResponse } from "@now/node";
 import dotenv from "dotenv";
-import postmark from "postmark";
+import * as postmark from "postmark";
 
 dotenv.config();
 
