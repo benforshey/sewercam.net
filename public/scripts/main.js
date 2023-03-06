@@ -66,23 +66,11 @@ function readyWrap() {
       feedback.className = "feedback_error";
       feedback.innerHTML = "Sorry for the inconvenience, but you somehow triggered our anti-spam protection. Please use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
       feedbackContainer[0].appendChild(feedback);
-      return ga("send", {
-        hitType: "event",
-        eventCategory: "Form",
-        eventAction: "spam",
-        eventLabel: "Contact Form"
-      });
     } else {
       if (navigator.onLine === false) {
         feedback.className = "feedback_warning";
         feedback.innerHTML = "Sorry for the inconvenience, but you are currently offline. You can't send a message while offline. You can wait until you are back online or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
         feedbackContainer[0].appendChild(feedback);
-        return ga("send", {
-          hitType: "event",
-          eventCategory: "Form",
-          eventAction: "offline",
-          eventLabel: "Contact Form"
-        });
       }
 
       button.textContent = "Sending Message…";
@@ -103,12 +91,6 @@ function readyWrap() {
           feedback.className = "feedback_warning";
           feedback.innerHTML = "Sorry for the inconvenience, but your message may have not sent. You can try sending it again or use the contact information at the <a data-scroll href='#footer'>bottom of the page</a> to reach us.";
           feedbackContainer[0].appendChild(feedback);
-          return ga("send", {
-            hitType: "event",
-            eventCategory: "Form",
-            eventAction: "fail",
-            eventLabel: "Contact Form"
-          });
         }
 
         feedback.className = "feedback_success";
@@ -117,20 +99,8 @@ function readyWrap() {
         document.querySelector(".inspection_form").reset();
         button.textContent = "Send";
         button.removeAttribute("disabled");
-        return ga("send", {
-          hitType: "event",
-          eventCategory: "Form",
-          eventAction: "send",
-          eventLabel: "Contact Form"
-        });
       }).catch(function (error) {
         console.error(error);
-        return ga("send", {
-          hitType: "event",
-          eventCategory: "Form",
-          eventAction: "fail",
-          eventLabel: "Contact Form"
-        });
       });
     }
   }
@@ -171,6 +141,7 @@ function readyWrap() {
 
     inspectionForm[0].addEventListener("submit", function (e) {
       e.preventDefault();
+      gtag_report_conversion();
       return sendRequest();
     });
     window.addEventListener("online", formConnectionManager);
