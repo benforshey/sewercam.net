@@ -75,7 +75,7 @@ function readyWrap() {
 
       button.textContent = "Sending Message…";
       button.setAttribute("disabled", "true");
-      return fetch("/api/sms-send", {
+      return fetch("/api/email-send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
