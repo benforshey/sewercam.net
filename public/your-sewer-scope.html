@@ -132,6 +132,25 @@
       gtag("js", new Date());
 
       gtag("config", "G-58DDS2H8EZ");
+
+      // Conversion Tracking
+      gtag("config", "AW-875172547");
+    </script>
+
+    <!-- event snippet for Schedule Sewer Scope conversion page. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-875172547/el9oCJzCzo8YEMOlqKED",
+          event_callback: callback,
+        });
+        return false;
+      }
     </script>
   </head>
 
