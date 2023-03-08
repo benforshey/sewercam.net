@@ -8,11 +8,11 @@ const client = new postmark.ServerClient(
   process.env.POSTMARK_API_TOKEN as string
 );
 
-export default (req: NowRequest, res: NowResponse) => {
+export default async (req: NowRequest, res: NowResponse) => {
   try {
     const { address, contact, name, time } = req.body;
 
-    client.sendEmail({
+    await client.sendEmail({
       From: "no-reply@sewercam.net",
       To: process.env.TO_EMAIL,
       Subject: "Sewercam Booking Request",
